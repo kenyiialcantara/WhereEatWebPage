@@ -8,3 +8,10 @@ body {
   /* background-color: rgba(0, 0, 0, 0.7); */
   background-position: center;
 }
+
+.buttonInforme{
+  background-color:'#8338ec';
+ border-redius:5px;
+ padding:4px;
+  
+}
