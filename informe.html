@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Informe de la Parte 01: Comprender el problema - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{background:#fff;color:#333;display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{background-color:#eaffea;color:#55a532}.hljs-deletion{background-color:#ffecec;color:#bd2c00}.hljs-link{text-decoration:underline}.markdown-body{word-wrap:break-word;font-size:16px;line-height:1.5}.markdown-body:after,.markdown-body:before{content:"";display:table}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-bottom:16px;margin-top:0}.markdown-body hr{background-color:#e7e7e7;border:0;height:.25em;margin:24px 0;padding:0}.markdown-body blockquote{border-left:.25em solid #ddd;color:#777;font-size:16px;padding:0 1em}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{background-color:#fcfcfc;border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb;color:#555;display:inline-block;font-size:11px;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{border-bottom:1px solid #eee;padding-bottom:.3em}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{color:#777;font-size:.85em}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{list-style-type:none;padding:0}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-bottom:0;margin-top:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{font-size:1em;font-style:italic;font-weight:700;margin-top:16px;padding:0}.markdown-body dl dd{margin-bottom:16px;padding:0 16px}.markdown-body table{display:block;overflow:auto;width:100%;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{border:1px solid #ddd;padding:6px 13px}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{background-color:#fff;box-sizing:initial;max-width:100%}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{background-color:initial;max-width:none;vertical-align:text-top}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{border:1px solid #ddd;display:block;float:left;margin:13px 0 0;overflow:hidden;padding:7px;width:auto}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{clear:both;color:#333;display:block;padding:5px 0 0}.markdown-body span.align-center{clear:both;display:block;overflow:hidden}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{clear:both;display:block;overflow:hidden}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{background-color:#0000000a;border-radius:3px;font-size:85%;margin:0;padding:.2em 0}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{content:"\00a0";letter-spacing:-.2em}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{background:#0000;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{background-color:#f7f7f7;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown-body pre code,.markdown-body pre tt{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{background:#fff;border:0;padding:10px 8px 9px;text-align:right}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{background:#f8f8f8;border-top:0;font-weight:700}.news .alert .markdown-body blockquote{border:0;padding:0 0 0 40px}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{cursor:default!important;float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle}.markdown-body{max-width:758px;overflow:visible!important;padding-bottom:40px;padding-top:40px;position:relative}.markdown-body.next-editor{overflow-x:hidden!important}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{border-right:3px solid #6ce26c!important;box-sizing:initial;color:#afafaf!important;cursor:default;display:inline-block;min-width:20px;padding:0 8px 0 0;position:relative;text-align:right;z-index:4}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-bottom:none;border-left:none;border-top:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-collapse:inherit!important;border-spacing:0}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{margin-bottom:unset;overflow:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p:last-child{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{background-color:inherit;border-radius:0;overflow:visible;text-align:center;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{height:100%;max-width:100%}.markdown-body pre>code.wrap{word-wrap:break-word;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap}.markdown-body .alert>p:last-child,.markdown-body .alert>ul:last-child{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{background-color:#000;background-position:50%;background-repeat:no-repeat;background-size:contain;cursor:pointer;display:table;overflow:hidden;text-align:center}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{object-fit:contain;width:100%;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{height:100%;left:0;position:absolute;top:0;width:100%}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{color:#fff;height:auto;left:50%;opacity:.3;position:absolute;top:50%;transform:translate(-50%,-50%);transition:opacity .2s;width:auto;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.figma{display:table;padding-bottom:56.25%;position:relative;width:100%}.figma iframe{border:1px solid #eee;bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.markmap-container{height:300px}.markmap-container>svg{height:100%;width:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{color:#777;margin:25px auto -25px;max-width:760px;position:relative;z-index:2}.toc .invisable-node{list-style-type:none}.ui-toc{bottom:20px;position:fixed;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{border-bottom-left-radius:0;border-top-left-radius:0;height:40px;padding:10px 4px}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{color:#fff;opacity:1;transition:opacity .2s}.ui-toc-label:focus{background-color:#ccc;color:#000;opacity:.3}.ui-toc-label:hover{background-color:#ccc;opacity:1;transition:opacity .2s}.ui-toc-dropdown{margin-bottom:20px;margin-top:20px;max-height:70vh;max-width:45vw;overflow:auto;padding-left:10px;padding-right:10px;text-align:inherit;width:25vw}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{letter-spacing:.0029em;padding-right:0}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{color:#767676;display:block;font-size:13px;font-weight:500;padding:4px 20px}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{background-color:initial;border-left:1px solid #000;color:#000;padding-left:19px;text-decoration:none}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{border-left:none;border-right:1px solid #000;padding-right:19px}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{background-color:initial;border-left:2px solid #000;color:#000;font-weight:700;padding-left:18px}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{border-left:none;border-right:2px solid #000;padding-right:18px}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:30px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:40px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{font-weight:500;padding-left:28px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{font-weight:500;padding-left:38px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{max-height:70vh;max-width:15vw;overflow:auto;position:fixed;top:0}.back-to-top,.expand-toggle,.go-to-bottom{color:#999;display:block;font-size:12px;font-weight:500;margin-left:10px;margin-top:10px;padding:4px 10px}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{background-position:50%;background-repeat:no-repeat;background-size:cover;border-radius:50%;display:block;height:20px;margin-bottom:2px;margin-right:5px;margin-top:2px;width:20px}.ui-user-icon.small{display:inline-block;height:18px;margin:0 0 .2em;vertical-align:middle;width:18px}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;padding-left:22px;text-decoration:none}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}.inline-spoiler-section{cursor:pointer}.inline-spoiler-section .spoiler-text{background-color:#333;border-radius:2px}.inline-spoiler-section .spoiler-text>*{opacity:0}.inline-spoiler-section .spoiler-img{filter:blur(10px)}.inline-spoiler-section.raw{background-color:#333;border-radius:2px}.inline-spoiler-section.raw>*{opacity:0}.inline-spoiler-section.unveil{cursor:auto}.inline-spoiler-section.unveil .spoiler-text{background-color:#3333331a}.inline-spoiler-section.unveil .spoiler-text>*{opacity:1}.inline-spoiler-section.unveil .spoiler-img{filter:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{color:#222;position:relative;z-index:1}.markdown-body.slides:before{background-color:currentColor;bottom:0;box-shadow:0 0 0 50vw;content:"";display:block;left:0;position:absolute;right:0;top:0;z-index:-1}.markdown-body.slides section[data-markdown]{background-color:#fff;margin-bottom:1.5em;position:relative;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{left:1em;max-height:100%;overflow:hidden;position:absolute;right:1em;top:50%;transform:translateY(-50%)}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{border:3px solid #777;content:"";height:1.5em;position:absolute;right:1em;top:-1.5em}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}svg{text-shadow:none}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-enabled comment-inner" data-hard-breaks="true"><h1 id="Informe-de-la-Parte-01-Comprender-el-problema" data-id="Informe-de-la-Parte-01-Comprender-el-problema"><a class="anchor hidden-xs" href="#Informe-de-la-Parte-01-Comprender-el-problema" title="Informe-de-la-Parte-01-Comprender-el-problema"><span class="octicon octicon-link"></span></a><span>Informe de la Parte 01: Comprender el problema</span></h1><h2 id="Configuración-del-espacio-de-proyecto-web" data-id="Configuración-del-espacio-de-proyecto-web"><a class="anchor hidden-xs" href="#Configuración-del-espacio-de-proyecto-web" title="Configuración-del-espacio-de-proyecto-web"><span class="octicon octicon-link"></span></a><span>Configuración del espacio de proyecto web</span></h2><ul>
+<li><span>Nombre del equipo: </span><strong><span>Digital Dexterity</span></strong></li>
+</ul><p><img src="https://images2.imgbox.com/d0/74/LGw3bfxj_o.png" alt="logo-img" loading="lazy"></p><ul>
+<li>
+<p><span>Miembros del equipo:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>NOMBRES Y APELLIDOS</span></th>
+<th><span>CÓDIGO</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><span>Jose Joaquin Tello Leon</span></strong></td>
+<td><span>20202131C</span></td>
+</tr>
+<tr>
+<td><strong><span>Kenyi Herry Alcantara Astete</span></strong></td>
+<td><span>20180343C</span></td>
+</tr>
+<tr>
+<td><strong><span>Pablo Alejandro Quispe Olaechea</span></strong></td>
+<td><span>20194153G</span></td>
+</tr>
+<tr>
+<td><strong><span>Paul Hans Murillo Dominguez</span></strong></td>
+<td><span>20193507J</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><span>Enlaces a todos los entregables del proyecto:</span></p>
+<ul>
+<li><a href="" target="_blank" rel="noopener"><span>Entregable 1</span></a></li>
+<li><a href="" target="_blank" rel="noopener"><span>Entregable 2</span></a></li>
+</ul>
+</li>
+</ul><h2 id="Características-importantes-de-los-usuarios-del-sistema" data-id="Características-importantes-de-los-usuarios-del-sistema"><a class="anchor hidden-xs" href="#Características-importantes-de-los-usuarios-del-sistema" title="Características-importantes-de-los-usuarios-del-sistema"><span class="octicon octicon-link"></span></a><span>Características importantes de los usuarios del sistema</span></h2><ul>
+<li><span>¿Quiénes son los usuarios potenciales?</span></li>
+<li><span>¿Qué tareas buscan realizar?</span></li>
+<li><span>¿Qué funcionalidad debería proporcionar el sistema?</span></li>
+<li><span>¿Qué criterios deberían usarse para juzgar si su diseño es exitoso o no?</span></li>
+</ul><h2 id="Visión-general-del-sistema" data-id="Visión-general-del-sistema"><a class="anchor hidden-xs" href="#Visión-general-del-sistema" title="Visión-general-del-sistema"><span class="octicon octicon-link"></span></a><span>Visión general del sistema</span></h2><ul>
+<li>
+<p><strong><span>Descripción de las características importantes de los usuarios del sistema.</span></strong><br>
+<span>Los usuarios del sistema son personas interesadas en encontrar restaurantes cercanos a su ubicación, ya sea para comer en el lugar o para pedir comida a domicilio. Los usuarios pueden ser de diferentes edades, géneros y orígenes culturales, pero todos tienen en común el deseo de encontrar comida deliciosa y conveniente.</span></p>
+</li>
+<li>
+<p><strong><span>¿A quién está ayudando?</span></strong><br>
+<span>El sistema está ayudando a los usuarios a encontrar restaurantes cercanos a su ubicación y facilitando la búsqueda de comida deliciosa y conveniente. Además, el sistema también ayuda a los propietarios de restaurantes a publicar su menú y ubicación para llegar a más clientes potenciales.</span></p>
+</li>
+<li>
+<p><strong><span>Una visión general de lo que los usuarios intentan lograr, lo que el sistema hará y por qué es necesario.</span></strong><br>
+<span>Los usuarios intentan encontrar restaurantes cercanos a su ubicación con el tipo de comida que desean, ver el menú del restaurante y leer reseñas de otros usuarios para tomar una decisión informada. El sistema permitirá a los usuarios buscar restaurantes por diferentes filtros, ver el menú de los restaurantes y leer reseñas de otros usuarios. Además, los usuarios también pueden crear publicaciones de sus restaurantes favoritos, lo que ayudará a otros usuarios a encontrar lugares nuevos e interesantes para comer.</span></p>
+</li>
+<li>
+<p><strong><span>Importancia</span></strong><br>
+<span>El sistema es necesario porque hay muchas opciones de restaurantes en cualquier ciudad y puede ser difícil para los usuarios encontrar lo que están buscando. El sistema hace que sea más fácil para los usuarios encontrar restaurantes cercanos a su ubicación y seleccionar el restaurante adecuado en función de sus preferencias de comida y de las reseñas de otros usuarios. Además, el sistema también ayuda a los propietarios de restaurantes a llegar a más clientes potenciales y aumentar su presencia en línea.</span></p>
+</li>
+</ul><h2 id="Análisis-de-Tareas" data-id="Análisis-de-Tareas"><a class="anchor hidden-xs" href="#Análisis-de-Tareas" title="Análisis-de-Tareas"><span class="octicon octicon-link"></span></a><span>Análisis de Tareas</span></h2><h3 id="Tarea-1-Búsqueda-de-restaurantes-por-filtros" data-id="Tarea-1-Búsqueda-de-restaurantes-por-filtros"><a class="anchor hidden-xs" href="#Tarea-1-Búsqueda-de-restaurantes-por-filtros" title="Tarea-1-Búsqueda-de-restaurantes-por-filtros"><span class="octicon octicon-link"></span></a><span>Tarea 1: Búsqueda de restaurantes por filtros</span></h3><ul>
+<li>
+<p><strong><span>Descripción</span></strong><br>
+<span>El usuario lleva a cabo la tarea de búsqueda de restaurantes por filtros, mediante la utilización de diferentes criterios de búsqueda, tales como tipo de comida, ubicación y nombre del restaurante. Una vez que los resultados son presentados, el usuario los revisa y selecciona un restaurante para poder ver su menú y detalles adicionales.</span></p>
+</li>
+<li>
+<p><strong><span>Contexto</span></strong><br>
+<span>El usuario busca restaurantes cercanos en una ubicación específica y tiene preferencias específicas de comida. El usuario está interesado en encontrar un restaurante que satisfaga sus necesidades y puede tomar en cuenta la calificación y las reseñas de otros usuarios para tomar su decisión.</span></p>
+</li>
+<li>
+<p><strong><span>Casos de uso</span></strong></p>
+<ol>
+<li><span>Búsqueda de restaurantes por ubicación</span></li>
+<li><span>El usuario ingresa su ubicación y ve los restaurantes cercanos en un radio determinado.</span></li>
+<li><span>Búsqueda de restaurantes por tipo de comida</span></li>
+<li><span>El usuario selecciona el tipo de comida que desea y se muestran los restaurantes que ofrecen esa comida.</span></li>
+<li><span>Búsqueda de restaurantes por nombre</span></li>
+<li><span>El usuario ingresa el nombre del restaurante y se muestra el restaurante correspondiente.</span></li>
+</ol>
+</li>
+<li>
+<p><strong><span>Tareas secundarias</span></strong></p>
+<ul>
+<li><span>Conexión con un proveedor de datos de ubicación para obtener la ubicación del usuario.</span></li>
+<li><span>Conexión con una base de datos de restaurantes para obtener información sobre restaurantes cercanos y sus detalles.</span></li>
+<li><span>Implementación de filtros de búsqueda para permitir que el usuario refine sus resultados de búsqueda.</span></li>
+</ul>
+</li>
+</ul><h3 id="Tarea2-Visualización-de-menú-del-restaurante" data-id="Tarea2-Visualización-de-menú-del-restaurante"><a class="anchor hidden-xs" href="#Tarea2-Visualización-de-menú-del-restaurante" title="Tarea2-Visualización-de-menú-del-restaurante"><span class="octicon octicon-link"></span></a><span>Tarea2: Visualización de menú del restaurante</span></h3><ul>
+<li>
+<p><strong><span>Descripción</span></strong><br>
+<span>El usuario que ha sele``ccionado un restaurante en la página web, podrá visualizar el menú del mismo. Podrá interactuar con el menú, desplegar las opciones, ver descripciones y precios de los diferentes platos ofrecidos.</span></p>
+</li>
+<li>
+<p><strong><span>Contexto</span></strong><br>
+<span>Es necesario que el usuario esté logueado en la página web para acceder a la visualización del menú. La visualización del menú debe ser clara y fácil de leer para que el usuario pueda navegar por las diferentes opciones sin problemas.</span></p>
+</li>
+<li>
+<p><strong><span>Casos de uso</span></strong></p>
+<ol>
+<li><span>El usuario selecciona el restaurante y visualiza el menú.</span></li>
+<li><span>El usuario interactúa con el menú, desplegando opciones, viendo descripciones y precios.</span></li>
+</ol>
+</li>
+<li>
+<p><strong><span>Tareas secundarias</span></strong></p>
+<ul>
+<li><span>Validación del usuario.</span></li>
+<li><span>Mostrar el menú del restaurante.</span></li>
+<li><span>Interacción del usuario con el menú.</span></li>
+</ul>
+</li>
+</ul><h3 id="Tarea-3-Creación-de-una-publicación-de-un-restaurante" data-id="Tarea-3-Creación-de-una-publicación-de-un-restaurante"><a class="anchor hidden-xs" href="#Tarea-3-Creación-de-una-publicación-de-un-restaurante" title="Tarea-3-Creación-de-una-publicación-de-un-restaurante"><span class="octicon octicon-link"></span></a><span>Tarea 3: Creación de una publicación de un restaurante</span></h3><ul>
+<li>
+<p><strong><span>Descripción</span></strong><br>
+<span>La tarea implica ingresar la información del restaurante, como su nombre, ubicación, descripción y menú en la página web. El usuario debe verificar que la información ingresada sea correcta y realizar cualquier corrección necesaria antes de publicar la información del restaurante.</span></p>
+</li>
+<li>
+<p><strong><span>Contexto</span></strong><br>
+<span>El usuario debe tener una cuenta en la página y haber iniciado sesión. Además, se deben establecer medidas de validación de datos para asegurarse de que la información ingresada sea completa y precisa.</span></p>
+</li>
+<li>
+<p><strong><span>Casos de uso</span></strong></p>
+<ol>
+<li><span>Ingresar información del restaurante.</span></li>
+<li><span>Verificar información del restaurante.</span></li>
+<li><span>Publicar información del restaurante.</span></li>
+</ol>
+</li>
+</ul><p><span>-</span><code> </code><strong><span>Tareas secundarias</span></strong></p><ul>
+<li><span>Diseñar y programar el formulario para la ingreso de información del restaurante.</span></li>
+<li><span>Validar la información ingresada y mostrar errores si es necesario.</span></li>
+<li><span>Almacenar la información del restaurante en la base de datos.</span></li>
+<li><span>Mostrar la información del restaurante publicada en la página.</span></li>
+</ul><h3 id="Tarea-4-Visualización-de-publicaciones-de-restaurantes" data-id="Tarea-4-Visualización-de-publicaciones-de-restaurantes"><a class="anchor hidden-xs" href="#Tarea-4-Visualización-de-publicaciones-de-restaurantes" title="Tarea-4-Visualización-de-publicaciones-de-restaurantes"><span class="octicon octicon-link"></span></a><span>Tarea 4: Visualización de publicaciones de restaurantes</span></h3><ul>
+<li>
+<p><strong><span>Descripción</span></strong><br>
+<span>Esta tarea permite que el usuario visualice las publicaciones de restaurantes en la página web y pueda filtrarlas por diferentes criterios, como ubicación y tipo de comida. Luego, el usuario podrá seleccionar una publicación de restaurante específica para ver más detalles.</span></p>
+</li>
+<li>
+<p><strong><span>Contexto</span></strong><br>
+<span>El usuario debe estar en la página principal de la aplicación y la página de publicaciones de restaurantes debe estar cargada y lista para su uso. Además, es importante que las publicaciones estén actualizadas y disponibles para su visualización.</span></p>
+</li>
+<li>
+<p><strong><span>Casos de uso</span></strong></p>
+<ol>
+<li><span>Navegar por las publicaciones de restaurantes</span></li>
+<li><span>Filtrar las publicaciones de restaurantes</span></li>
+<li><span>Ver detalles de una publicación de restaurante</span></li>
+</ol>
+</li>
+<li>
+<p><strong><span>Tareas secundarias</span></strong></p>
+<ul>
+<li><span>Mostrar la lista de publicaciones de restaurantes</span></li>
+<li><span>Mostrar la información básica de cada publicación (nombre, ubicación, tipo de comida, etc.)</span></li>
+<li><span>Implementar la funcionalidad de filtrado de publicaciones de restaurantes</span></li>
+<li><span>Implementar la funcionalidad de selección de una publicación para ver más detalles</span></li>
+<li><span>Mostrar la información detallada de una publicación seleccionada (menú, fotos, reseñas, etc.)</span></li>
+</ul>
+</li>
+</ul><h3 id="Tarea-5-Registro-de-un-usuario-en-el-sistema" data-id="Tarea-5-Registro-de-un-usuario-en-el-sistema"><a class="anchor hidden-xs" href="#Tarea-5-Registro-de-un-usuario-en-el-sistema" title="Tarea-5-Registro-de-un-usuario-en-el-sistema"><span class="octicon octicon-link"></span></a><span>Tarea 5: Registro de un usuario en el sistema</span></h3><ul>
+<li>
+<p><strong><span>Descripción</span></strong><br>
+<span>Consiste en que el usuario proporcione información personal para crear una cuenta de usuario y verificar su dirección de correo electrónico. El registro debe ser fácil de usar y entender, y debe haber un mecanismo de seguridad para proteger los datos personales del usuario.</span></p>
+</li>
+<li>
+<p><strong><span>Contexto</span></strong><br>
+<span>El usuario debe tener acceso a internet y un correo electrónico válido. Además, se deben implementar medidas de seguridad para proteger la información personal del usuario.</span></p>
+</li>
+<li>
+<p><strong><span>Casos de uso</span></strong></p>
+<ol>
+<li><span>Registro de un usuario nuevo</span></li>
+<li><span>Verificación de correo electrónico</span></li>
+</ol>
+</li>
+<li>
+<p><strong><span>Tareas secundarias</span></strong></p>
+<ul>
+<li><span>Diseñar la página de registro.</span></li>
+<li><span>Implementar la funcionalidad de registro y verificación de correo electrónico.</span></li>
+<li><span>Implementar medidas de seguridad para proteger la información del usuario.</span></li>
+</ul>
+</li>
+</ul><h3 id="Tarea-6-Inicio-de-sesión-de-un-usuario-en-el-sistema" data-id="Tarea-6-Inicio-de-sesión-de-un-usuario-en-el-sistema"><a class="anchor hidden-xs" href="#Tarea-6-Inicio-de-sesión-de-un-usuario-en-el-sistema" title="Tarea-6-Inicio-de-sesión-de-un-usuario-en-el-sistema"><span class="octicon octicon-link"></span></a><span>Tarea 6: Inicio de sesión de un usuario en el sistema</span></h3><ul>
+<li>
+<p><strong><span>Descripción</span></strong><br>
+<span>El usuario debe ingresar su correo electrónico y contraseña registrados en el sistema para poder acceder a la plataforma y utilizar todas sus funcionalidades.</span></p>
+</li>
+<li>
+<p><strong><span>Contexto</span></strong><br>
+<span>Para poder acceder al sistema, el usuario debe haber completado el proceso de registro en la plataforma. Es importante que la plataforma valide la información de inicio de sesión del usuario, y brinde medidas de seguridad.</span></p>
+</li>
+<li>
+<p><strong><span>Casos de uso</span></strong></p>
+<ol>
+<li><span>Iniciar sesión con correo electrónico y contraseña.</span></li>
+</ol>
+</li>
+<li>
+<p><strong><span>Tareas secundarias</span></strong></p>
+<ul>
+<li><span>Validar que el correo electrónico y contraseña sean válidos y coincidan con los registrados en la plataforma.</span></li>
+<li><span>Mostrar un mensaje de error en caso de que el correo electrónico o contraseña sean incorrectos.</span></li>
+<li><span>Mantener la sesión iniciada mientras el usuario navega por la plataforma.</span></li>
+</ul>
+</li>
+</ul><h2 id="Evaluación-del-sistema-heredado-o-existente" data-id="Evaluación-del-sistema-heredado-o-existente"><a class="anchor hidden-xs" href="#Evaluación-del-sistema-heredado-o-existente" title="Evaluación-del-sistema-heredado-o-existente"><span class="octicon octicon-link"></span></a><span>Evaluación del sistema heredado o existente</span></h2><h3 id="Uber-Eats" data-id="Uber-Eats"><a class="anchor hidden-xs" href="#Uber-Eats" title="Uber-Eats"><span class="octicon octicon-link"></span></a><span>Uber Eats</span></h3><p><img src="https://i.imgur.com/6JSf4xb.jpg" alt="uber-eats" loading="lazy"></p><h4 id="Fortalezas" data-id="Fortalezas"><a class="anchor hidden-xs" href="#Fortalezas" title="Fortalezas"><span class="octicon octicon-link"></span></a><span>Fortalezas</span></h4><ul>
+<li><span>Amplia seleccion de restaurantes manteniendo simple la experiencia de usuario.</span></li>
+<li><span>Rastreo en tiempo real de la entrega.</span></li>
+</ul><h4 id="Debilidades" data-id="Debilidades"><a class="anchor hidden-xs" href="#Debilidades" title="Debilidades"><span class="octicon octicon-link"></span></a><span>Debilidades</span></h4><ul>
+<li><span>Altos costos de entrega durante horas pico.</span></li>
+<li><span>Tiempos de espera largos y poca precisiòn de los pedidos.</span></li>
+</ul><h3 id="Grubhub" data-id="Grubhub"><a class="anchor hidden-xs" href="#Grubhub" title="Grubhub"><span class="octicon octicon-link"></span></a><span>Grubhub</span></h3><p><img src="https://i.imgur.com/iXjVfsV.png" alt="grub-hub" loading="lazy"></p><h4 id="Fortalezas1" data-id="Fortalezas"><a class="anchor hidden-xs" href="#Fortalezas1" title="Fortalezas1"><span class="octicon octicon-link"></span></a><span>Fortalezas</span></h4><ul>
+<li><span>Gran variedad de resturantes con interfaz sencilla.</span></li>
+<li><span>Programaciòn de pedidos para otro momento.</span></li>
+<li><span>Integraciòn con Appe Pay.</span></li>
+</ul><h4 id="Debilidades1" data-id="Debilidades"><a class="anchor hidden-xs" href="#Debilidades1" title="Debilidades1"><span class="octicon octicon-link"></span></a><span>Debilidades</span></h4><ul>
+<li><span>Similar a Uber Eats, tiene altas tarifas de entrega.</span></li>
+<li><span>Errores en los pedidos.</span></li>
+</ul><h3 id="OpenTable" data-id="OpenTable"><a class="anchor hidden-xs" href="#OpenTable" title="OpenTable"><span class="octicon octicon-link"></span></a><span>OpenTable</span></h3><p><img src="https://i.imgur.com/aVmYTE3.png" alt="open-table" loading="lazy"></p><h4 id="Fortalezas2" data-id="Fortalezas"><a class="anchor hidden-xs" href="#Fortalezas2" title="Fortalezas2"><span class="octicon octicon-link"></span></a><span>Fortalezas</span></h4><ul>
+<li><span>Puede hacer reservas en lìnea.</span></li>
+<li><span>Permite recibir confirmaciones por correo electrònico o mensaje de texto.</span></li>
+<li><span>Amplia seleccion de restaurantes.</span></li>
+<li><span>Experiencia de usuario simplificada.</span></li>
+</ul><h3 id="Yelp" data-id="Yelp"><a class="anchor hidden-xs" href="#Yelp" title="Yelp"><span class="octicon octicon-link"></span></a><span>Yelp</span></h3><p><img src="https://i.imgur.com/J8f8cRE.jpg" alt="yelp" loading="lazy"></p><h4 id="Fortalezas3" data-id="Fortalezas"><a class="anchor hidden-xs" href="#Fortalezas3" title="Fortalezas3"><span class="octicon octicon-link"></span></a><span>Fortalezas</span></h4><ul>
+<li><span>Gran cantidad de informacion sobre restaurantes como reseñas, clasificaciones y fotografìas.</span></li>
+<li><span>Busqueda de categorias como “romàntico” o “para grupos grandes”.</span></li>
+</ul><h4 id="Debilidades2" data-id="Debilidades"><a class="anchor hidden-xs" href="#Debilidades2" title="Debilidades2"><span class="octicon octicon-link"></span></a><span>Debilidades</span></h4><ul>
+<li><span>Informes de reseñas falsas o sesgadas.</span></li>
+<li><span>Problemas de precision de la informaciòn del restaurante.</span></li>
+</ul><h2 id="Criterios-de-Usabilidad" data-id="Criterios-de-Usabilidad"><a class="anchor hidden-xs" href="#Criterios-de-Usabilidad" title="Criterios-de-Usabilidad"><span class="octicon octicon-link"></span></a><span>Criterios de Usabilidad</span></h2><p><span>Los criterios de usabilidad del diseño de una interfaz como la planeada para la página DondeComer implementan algunos principios de usabilidad de Jakob Nielsen. Se implementarán de la siguiente manera:</span></p><ol>
+<li>
+<p><strong><span>Visibilidad del sistema:</span></strong><span> La interfaz de la aplicación debe ser fácil de entender a simple vista, fácil de navegar y se deben encontrar todas las opciones básicas y esenciales a primera vista. Por ejemplo, se debe tener muy clara y visible la lista de restaurantes que se podrán seleccionar, junto a su información básica de descripción y contacto.</span></p>
+<p><span>Este criterio podría medirse usando registros de tiempo para cuánto tiempo el usuario le toma realizar una tarea (por ejemplo, contactar un restaurante de su agrado).</span></p>
+</li>
+<li>
+<p><strong><span>Correspondencia entre el sistema y el mundo real:</span></strong><span> El contexto en el cual se realiza la aplicación está relacionado al mundo de la gastronomía y el turismo, por lo que el lenguaje empleado y las herramientas y tareas a las que pueda acceder el usuario entran en ese mismo contexto. Por ejemplo, el uso de sistema de puntuaciones basado en estrellas y comentarios en redes sociales.</span></p>
+<p><span>Se podría medir en la cantidad de usuarios que llegan a hacer una reservación de un restaurante respecto a si acceden a la sección de comentarios. Este podría ser un buen indicativo que los comentarios ayudan en la toma de decisiones del usuario.</span></p>
+</li>
+<li>
+<p><strong><span>Libertad y control del usuario:</span></strong><span> Las opciones de búsqueda y preferencias del usuario deberían quedar registradas para mejorar la experiencia de exploración de nuevos restaurantes de manera personalizada.</span></p>
+<p><span>Podría medirse en la cantidad de usuarios que reservan en restaurantes recomendados por la página basada en sus preferencias.</span></p>
+</li>
+<li>
+<p><strong><span>Prevención de errores:</span></strong><span> El usuario puede realizar acciones que no quisiera o no debería, por lo que la interfaz debe tomar en cuenta los aspectos mas cruciales de la experiencia del usuario y protegerlas de errores. Por ejemplo, el reservar en un restaurante requiere de confirmación por parte del usuario de tal manera que no pueda hacerse accidentalmente, o el sistema de valoración de restaurantes se activaría una vez se haya realizado una reservación.</span></p>
+</li>
+<li>
+<p><strong><span>Coherencia y estándares:</span></strong><span> La página tendrá una interfaz con componentes coherentes y significativos, resaltando aquellos mas importantes sin perder la esencia de la interfaz en si. Todas las pestañas dentro de la navegación estarán usando un mismo tema de colores y fuentes que garantizarán al usuario su permanencia en la propia página, a menos que se decida redirigirse a la página principal de algún restaurante.</span></p>
+</li>
+<li>
+<p><strong><span>Reconocimiento en vez de recordar:</span></strong><span> La información respecto a los restaurantes y opciones de la interfaz debe ser lo mas ordenada y puntual posible, para que los usuarios no pierdan el tiempo en información redundante y el uso de la página sea mas fluido.</span></p>
+</li>
+<li>
+<p><strong><span>Ayuda y documentación:</span></strong><span> La página tendrá una sección de instructivos de cómo usarla y también una sección de preguntas frecuentes para tratar de resolver la mayor cantidad de dudas básicas posibles respecto a su funcionamiento.</span></p>
+</li>
+<li>
+<p><strong><span>Feedback al usuario:</span></strong><span> Ademas de poder prevenir los errores comunes de los usuarios, es necesario saber cómo contrarrestarlos en tiempo real. Por ejemplo, si un usuario trata de hacer una acción no permitida, o si utiliza datos poco precisos en su búsqueda, se le debe notificar e instruir al usuario en cómo mejoraría el uso de la página.</span></p>
+</li>
+</ol><h2 id="Implicancias-de-los-usuarios-en-el-diseño" data-id="Implicancias-de-los-usuarios-en-el-diseño"><a class="anchor hidden-xs" href="#Implicancias-de-los-usuarios-en-el-diseño" title="Implicancias-de-los-usuarios-en-el-diseño"><span class="octicon octicon-link"></span></a><span>Implicancias de los usuarios en el diseño</span></h2><p><span>Para el diseño de la interfaz, se identificaron 4 tipos de usuarios typo cliente B2C y 1 usuario tipo cliente B2B:</span></p><h4 id="Cliente-Negocio-consumidorB2C" data-id="Cliente-Negocio-consumidorB2C"><a class="anchor hidden-xs" href="#Cliente-Negocio-consumidorB2C" title="Cliente-Negocio-consumidorB2C"><span class="octicon octicon-link"></span></a><span>Cliente Negocio-consumidor(B2C)</span></h4><ol>
+<li>
+<p><strong><span>Usuarios primerizos:</span></strong><span> Son aquellos usuarios que recién comienzan por descubrir la aplicación y todas sus funcionalidades. También aquellos usuarios que no están muy familiarizados con aplicaciones de este tipo. Para ellos la aplicación debe ser intuitiva y sencilla de usar, con opciones y funcionalidades reconocibles sin haber tenido experiencia previa. El propósito de la aplicación debe ser claro y el usuario debe sentirse guiado a través de todo su uso. Adicionalmente, se debe incluir tutoriales y ayuda para los usuarios que lo requieran.</span></p>
+</li>
+<li>
+<p><strong><span>Usuarios ocasionales:</span></strong><span> Son aquellos usuarios que usan la aplicación de vez en cuando, pero no son de manera experta o continua. Es el público en general que está familiarizado con el uso de aplicaciones e internet, sin embargo no suele usar aplicaciones para buscar restaurantes en línea. Para ellos, la aplicación debe sentirse natural y similar a usar otras aplicaciones, con la visualización e interacción basada en los estándares actuales. Ellos podrán acceder a las funcionalidades básicas de manera natural, sin embargo, se les debe ofrecer también opciones avanzadas para personalizar su búsqueda o visualización de los resultados.</span></p>
+</li>
+<li>
+<p><strong><span>Usuarios frecuentes:</span></strong><span> Estos son aquellos usuarios que usan esta aplicación y otras similares de manera mucho mas frecuente. También están mucho mas familiarizados con el concepto de buscar restaurantes y comida en línea. Para ellos la interfaz y los resultados obtenidos a través de ella deben ser únicos y distinguibles de cualquier otra aplicación, deben mostrar la información justa y necesaria, con opción para ampliar la información ya mostrada. En la interfaz podrían incluirse opciones para guardar restaurantes favoritos y basar los resultados próximos en las preferencias anteriores.</span></p>
+</li>
+<li>
+<p><strong><span>Usuarios con discapacidades:</span></strong><span> Son los usuarios que pueden tener discapacidades de tipo visual, auditiva o motora. La interfaz deberá ser diseñada teniendo en cuenta la accesibilidad, por ejemplo teniendo etiquetas de texto  para las imágenes mostradas que pueda ser leída en voz (Caso de 100% invidente), lectura de texto por audio o también personalización de los colores y el tamaño del texto (Caso de personas con dificultad para ver).</span></p>
+</li>
+</ol><h4 id="Cliente-Negocio-NegocioB2B" data-id="Cliente-Negocio-NegocioB2B"><a class="anchor hidden-xs" href="#Cliente-Negocio-NegocioB2B" title="Cliente-Negocio-NegocioB2B"><span class="octicon octicon-link"></span></a><span>Cliente Negocio-Negocio(B2B)</span></h4><ol>
+<li><strong><span>Estos usuarios, son los restaurantes:</span></strong><span> Son usuarios dedicados al rubro de la gastronomía que se registraron en la aplicación para ofrecer sus platillos. La aplicación le proveerá secciones (pantallas) de seguimiento y administración de su negocio como; la capacidad de customizar la apariencia de la vista al público ( Logo, ubicación ,comidas , etc) y poder visualizar los pedidos entrantes.</span></li>
+</ol><h2 id="Hipótesis" data-id="Hipótesis"><a class="anchor hidden-xs" href="#Hipótesis" title="Hipótesis"><span class="octicon octicon-link"></span></a><span>Hipótesis</span></h2><ol>
+<li>
+<p><span>Los usuarios nuevos comprenderán inmediatamentes la forma de usar de la aplicación. Por qué se basará en los estándares de diseño, es decir la aplicación estará diseñada de acuerdo al mapa de calor de visualización en la pantalla.</span></p>
+</li>
+<li>
+<p><span>Los usuarios regulares (ocasionales y frecuentes) realizaran sus pedidos fácilmente, esto incluye solicitar y realizar transacciones, sin tener dificultad en el proceso ya que se usará pasarelas de pago eficientes.</span></p>
+</li>
+<li>
+<p><span>Los usuarios invidentes no tendrán ninguna dificultad en buscar los restaurantes ya que la interfaz de audio y voz, aceptará inputs usados más frecuentes para buscar un restaurante y leerá todo los resultados de acuerdo al “tooltip” y etiquetados.</span></p>
+</li>
+<li>
+<p><span>El paso de usuarios nuevos a regulates será en corto tiempo, debido a la Gamificación (Por ejemplo: Dar cupones por realizar 25 pedidos en un mes), ya que se afirma que los usuarios nuevos tendrán el incentivo de intensificar su pedidos para conseguir los cupones. Esto se evidencia en las  aplicaciones similares en la actualidad.</span></p>
+</li>
+<li>
+<p><span>Para los clientes (B2B) se afirma que podrán registrar su negocio con unos pasos rápidamente, también que tendrán la capacidad de entender fácilmente la forma de customización de su apariencia al público, etc.</span></p>
+</li>
+<li>
+<p><span>La aplicación tendrá más acogida con el público en general, ya que la aplicación ofrecera los platillos de los restaurantes clásicos que ofrecen </span><em><span>Menú</span></em><span> en comparación a los actuales aplicaciones que están abocados a comidas no convencionales (Fast food, nuggets, etc) que no se comen en el día a día.</span></p>
+</li>
+</ol><h2 id="Conclusiones" data-id="Conclusiones"><a class="anchor hidden-xs" href="#Conclusiones" title="Conclusiones"><span class="octicon octicon-link"></span></a><span>Conclusiones</span></h2><ol>
+<li><span>Se infiere que en poco tiempo la aplicación será indispensable para todos los tipos de clientes BTC, debido a que facilitará la búsqueda de restaurantes y pedidos de comida, que hoy en día dificulta a las personas.</span></li>
+<li><span>Se concluye que a mayor registro de clientes B2B la aplicación será más recurrente por los clientes BTC debido a que se tendrán más opciones de búsqueda (Es por ello que planeamos hacer un lanzamiento de la aplicación a gran escala).</span></li>
+<li><span>Se infiere que los restaurantes clásicos aumentaran sus ingresos debido al mayor rango de personas que verán su vista de restaurante en la aplicación.</span></li>
+<li><span>Se concluye que enfocarse en los restaurantes convencionales clasicos hará que la aplicación tenga acogida en una gran cantidad de clientes B2B el cual hace que se tenga más opciones de búsqueda, conllevando al incremento de clientes B2C.</span></li>
+</ol><h1 id="Informe-de-la-Parte-02-Alternativas-de-diseño" data-id="Informe-de-la-Parte-02-Alternativas-de-diseño"><a class="anchor hidden-xs" href="#Informe-de-la-Parte-02-Alternativas-de-diseño" title="Informe-de-la-Parte-02-Alternativas-de-diseño"><span class="octicon octicon-link"></span></a><span>Informe de la Parte 02: Alternativas de diseño</span></h1><h2 id="Diseño-de-la-aplicacion-web-en-pantallas-descktop" data-id="Diseño-de-la-aplicacion-web-en-pantallas-descktop"><a class="anchor hidden-xs" href="#Diseño-de-la-aplicacion-web-en-pantallas-descktop" title="Diseño-de-la-aplicacion-web-en-pantallas-descktop"><span class="octicon octicon-link"></span></a><span>Diseño de la aplicacion web en pantallas descktop.</span></h2><h3 id="1-Cliente-B2C" data-id="1-Cliente-B2C"><a class="anchor hidden-xs" href="#1-Cliente-B2C" title="1-Cliente-B2C"><span class="octicon octicon-link"></span></a><span>1. Cliente B2C</span></h3><blockquote>
+<h4 id="Pantalla-Home" data-id="Pantalla-Home"><a class="anchor hidden-xs" href="#Pantalla-Home" title="Pantalla-Home"><span class="octicon octicon-link"></span></a><span>Pantalla Home:</span></h4>
+<p><span>Es la pantalla que todo público verá al ingresar a la aplicación. En esta pantalla se realizará las búsquedas de los restaurantes de acuerdo a diferentes parámetros (Ubicación, interés en una comida en particular, distancia, etc) de tal manera que se se observe los resultados.</span></p>
+</blockquote><p><img src="https://i.imgur.com/D8IMAN1.png" alt="" loading="lazy"></p><blockquote>
+<h4 id="Pantalla-de-vista-público-de-un-restaurant" data-id="Pantalla-de-vista-público-de-un-restaurant"><a class="anchor hidden-xs" href="#Pantalla-de-vista-público-de-un-restaurant" title="Pantalla-de-vista-público-de-un-restaurant"><span class="octicon octicon-link"></span></a><span>Pantalla de vista público de un restaurant:</span></h4>
+<p><span>En esta pantalla se observará los platillos que ofrece el restaurante. Entonces el cliente B2C podrá agregar al carrito sus preferencias de comida que el restaurante ofrece.</span></p>
+</blockquote><p><img src="https://hackmd.io/_uploads/S1ka1VtNh.png" alt="" loading="lazy"></p><blockquote>
+<h4 id="Pantalla-de-Carrito" data-id="Pantalla-de-Carrito"><a class="anchor hidden-xs" href="#Pantalla-de-Carrito" title="Pantalla-de-Carrito"><span class="octicon octicon-link"></span></a><span>Pantalla de Carrito:</span></h4>
+<p><span>En esta pantalla el cliente B2C observa el monto de lo que agrego y tendrá tres opciones de pedir:</span><br>
+<span>a. Delivery</span><br>
+<span>b. Pedir y comer en local.</span><br>
+<span>c. Pedir y recoger en local.</span></p>
+</blockquote><p><img src="https://i.imgur.com/wYKJK7h.png" alt="" loading="lazy"></p><h3 id="2-Cliente-B2B" data-id="2-Cliente-B2B"><a class="anchor hidden-xs" href="#2-Cliente-B2B" title="2-Cliente-B2B"><span class="octicon octicon-link"></span></a><span>2. Cliente B2B:</span></h3><blockquote>
+<h4 id="Pantalla-Home-En-esta-pantalla-el-cliente-B2B-observará-su-flujo-de-caja-algunos-gráficos-en-el-tiempo-de-sus-ingresos-y-clientes-y-otras-características" data-id="Pantalla-Home-En-esta-pantalla-el-cliente-B2B-observará-su-flujo-de-caja-algunos-gráficos-en-el-tiempo-de-sus-ingresos-y-clientes-y-otras-características"><a class="anchor hidden-xs" href="#Pantalla-Home-En-esta-pantalla-el-cliente-B2B-observará-su-flujo-de-caja-algunos-gráficos-en-el-tiempo-de-sus-ingresos-y-clientes-y-otras-características" title="Pantalla-Home-En-esta-pantalla-el-cliente-B2B-observará-su-flujo-de-caja-algunos-gráficos-en-el-tiempo-de-sus-ingresos-y-clientes-y-otras-características"><span class="octicon octicon-link"></span></a><span>Pantalla Home: En esta pantalla el cliente B2B observará su flujo de caja, algunos gráficos en el tiempo de sus ingresos y clientes, y otras características.</span></h4>
+</blockquote><p><img src="https://i.imgur.com/a6aNr60.png" alt="" loading="lazy"></p><blockquote>
+<h4 id="Pantalla-Perfil-En-esta-parte-el-cliente-B2B-customiza-su-restaurante-para-que-se-muestre-al-público--como-su-logo-tipo-de-platillo-que-ofrece--horario-de-atención-ubicación-métodos-de-pago-etc" data-id="Pantalla-Perfil-En-esta-parte-el-cliente-B2B-customiza-su-restaurante-para-que-se-muestre-al-público--como-su-logo-tipo-de-platillo-que-ofrece--horario-de-atención-ubicación-métodos-de-pago-etc"><a class="anchor hidden-xs" href="#Pantalla-Perfil-En-esta-parte-el-cliente-B2B-customiza-su-restaurante-para-que-se-muestre-al-público--como-su-logo-tipo-de-platillo-que-ofrece--horario-de-atención-ubicación-métodos-de-pago-etc" title="Pantalla-Perfil-En-esta-parte-el-cliente-B2B-customiza-su-restaurante-para-que-se-muestre-al-público--como-su-logo-tipo-de-platillo-que-ofrece--horario-de-atención-ubicación-métodos-de-pago-etc"><span class="octicon octicon-link"></span></a><span>Pantalla Perfil: En esta parte el cliente B2B customiza su restaurante para que se muestre al público , como su logo, tipo de platillo que ofrece , horario de atención, ubicación, métodos de pago, etc.</span></h4>
+</blockquote><p><img src="https://i.imgur.com/d9IXcl9.png" alt="" loading="lazy"></p><blockquote>
+<h4 id="Pantalla-menú" data-id="Pantalla-menú"><a class="anchor hidden-xs" href="#Pantalla-menú" title="Pantalla-menú"><span class="octicon octicon-link"></span></a><span>Pantalla menú:</span></h4>
+<p><span>En esta pantalla el cliente B2B customiza sus platillos que ofrece, podrá crear secciones, menús: entradas y plato de fondo (clásico,ejecutivo,etc), así como el precio y sus respectivas fotos.</span></p>
+</blockquote><p><img src="https://i.imgur.com/3q9mXdr.png" alt="" loading="lazy"></p><blockquote>
+<h4 id="Pantalla-dashboarda" data-id="Pantalla-dashboarda"><a class="anchor hidden-xs" href="#Pantalla-dashboarda" title="Pantalla-dashboarda"><span class="octicon octicon-link"></span></a><span>Pantalla dashboarda:</span></h4>
+<p><span>En esta pantalla el cliente B2B podrá visualizar los pedidos que se soliciten por su tipo determinados (Delivery, recojo en local y pedir para comer en local). En esta parte el cliente B2B le hará saber al cliente BTC el estado de su orden (Recibido, preparando, listo para despachar y entregado). También en cada pedido se observará la información del solicitante; La ubicación(caso delivery), nombre, número de teléfono y la fecha y hora.</span></p>
+</blockquote><p><img src="https://i.imgur.com/F2ZHAsA.png" alt="" loading="lazy"></p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li><a href="#Informe-de-la-Parte-01-Comprender-el-problema" title="Informe de la Parte 01: Comprender el problema">Informe de la Parte 01: Comprender el problema</a><ul class="nav">
+<li><a href="#Configuración-del-espacio-de-proyecto-web" title="Configuración del espacio de proyecto web">Configuración del espacio de proyecto web</a></li>
+<li><a href="#Características-importantes-de-los-usuarios-del-sistema" title="Características importantes de los usuarios del sistema">Características importantes de los usuarios del sistema</a></li>
+<li><a href="#Visión-general-del-sistema" title="Visión general del sistema">Visión general del sistema</a></li>
+<li><a href="#Análisis-de-Tareas" title="Análisis de Tareas">Análisis de Tareas</a><ul class="nav">
+<li><a href="#Tarea-1-Búsqueda-de-restaurantes-por-filtros" title="Tarea 1: Búsqueda de restaurantes por filtros">Tarea 1: Búsqueda de restaurantes por filtros</a></li>
+<li><a href="#Tarea2-Visualización-de-menú-del-restaurante" title="Tarea2: Visualización de menú del restaurante">Tarea2: Visualización de menú del restaurante</a></li>
+<li><a href="#Tarea-3-Creación-de-una-publicación-de-un-restaurante" title="Tarea 3: Creación de una publicación de un restaurante">Tarea 3: Creación de una publicación de un restaurante</a></li>
+<li><a href="#Tarea-4-Visualización-de-publicaciones-de-restaurantes" title="Tarea 4: Visualización de publicaciones de restaurantes">Tarea 4: Visualización de publicaciones de restaurantes</a></li>
+<li><a href="#Tarea-5-Registro-de-un-usuario-en-el-sistema" title="Tarea 5: Registro de un usuario en el sistema">Tarea 5: Registro de un usuario en el sistema</a></li>
+<li><a href="#Tarea-6-Inicio-de-sesión-de-un-usuario-en-el-sistema" title="Tarea 6: Inicio de sesión de un usuario en el sistema">Tarea 6: Inicio de sesión de un usuario en el sistema</a></li>
+</ul>
+</li>
+<li><a href="#Evaluación-del-sistema-heredado-o-existente" title="Evaluación del sistema heredado o existente">Evaluación del sistema heredado o existente</a><ul class="nav">
+<li><a href="#Uber-Eats" title="Uber Eats">Uber Eats</a></li>
+<li><a href="#Grubhub" title="Grubhub">Grubhub</a></li>
+<li><a href="#OpenTable" title="OpenTable">OpenTable</a></li>
+<li><a href="#Yelp" title="Yelp">Yelp</a></li>
+</ul>
+</li>
+<li><a href="#Criterios-de-Usabilidad" title="Criterios de Usabilidad">Criterios de Usabilidad</a></li>
+<li><a href="#Implicancias-de-los-usuarios-en-el-diseño" title="Implicancias de los usuarios en el diseño">Implicancias de los usuarios en el diseño</a></li>
+<li><a href="#Hipótesis" title="Hipótesis">Hipótesis</a></li>
+<li><a href="#Conclusiones" title="Conclusiones">Conclusiones</a></li>
+</ul>
+</li>
+<li><a href="#Informe-de-la-Parte-02-Alternativas-de-diseño" title="Informe de la Parte 02: Alternativas de diseño">Informe de la Parte 02: Alternativas de diseño</a><ul class="nav">
+<li><a href="#Diseño-de-la-aplicacion-web-en-pantallas-descktop" title="Diseño de la aplicacion web en pantallas descktop.">Diseño de la aplicacion web en pantallas descktop.</a><ul class="nav">
+<li><a href="#1-Cliente-B2C" title="1. Cliente B2C">1. Cliente B2C</a></li>
+<li><a href="#2-Cliente-B2B" title="2. Cliente B2B:">2. Cliente B2B:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li><a href="#Informe-de-la-Parte-01-Comprender-el-problema" title="Informe de la Parte 01: Comprender el problema">Informe de la Parte 01: Comprender el problema</a><ul class="nav">
+<li><a href="#Configuración-del-espacio-de-proyecto-web" title="Configuración del espacio de proyecto web">Configuración del espacio de proyecto web</a></li>
+<li><a href="#Características-importantes-de-los-usuarios-del-sistema" title="Características importantes de los usuarios del sistema">Características importantes de los usuarios del sistema</a></li>
+<li><a href="#Visión-general-del-sistema" title="Visión general del sistema">Visión general del sistema</a></li>
+<li><a href="#Análisis-de-Tareas" title="Análisis de Tareas">Análisis de Tareas</a><ul class="nav">
+<li><a href="#Tarea-1-Búsqueda-de-restaurantes-por-filtros" title="Tarea 1: Búsqueda de restaurantes por filtros">Tarea 1: Búsqueda de restaurantes por filtros</a></li>
+<li><a href="#Tarea2-Visualización-de-menú-del-restaurante" title="Tarea2: Visualización de menú del restaurante">Tarea2: Visualización de menú del restaurante</a></li>
+<li><a href="#Tarea-3-Creación-de-una-publicación-de-un-restaurante" title="Tarea 3: Creación de una publicación de un restaurante">Tarea 3: Creación de una publicación de un restaurante</a></li>
+<li><a href="#Tarea-4-Visualización-de-publicaciones-de-restaurantes" title="Tarea 4: Visualización de publicaciones de restaurantes">Tarea 4: Visualización de publicaciones de restaurantes</a></li>
+<li><a href="#Tarea-5-Registro-de-un-usuario-en-el-sistema" title="Tarea 5: Registro de un usuario en el sistema">Tarea 5: Registro de un usuario en el sistema</a></li>
+<li><a href="#Tarea-6-Inicio-de-sesión-de-un-usuario-en-el-sistema" title="Tarea 6: Inicio de sesión de un usuario en el sistema">Tarea 6: Inicio de sesión de un usuario en el sistema</a></li>
+</ul>
+</li>
+<li><a href="#Evaluación-del-sistema-heredado-o-existente" title="Evaluación del sistema heredado o existente">Evaluación del sistema heredado o existente</a><ul class="nav">
+<li><a href="#Uber-Eats" title="Uber Eats">Uber Eats</a></li>
+<li><a href="#Grubhub" title="Grubhub">Grubhub</a></li>
+<li><a href="#OpenTable" title="OpenTable">OpenTable</a></li>
+<li><a href="#Yelp" title="Yelp">Yelp</a></li>
+</ul>
+</li>
+<li><a href="#Criterios-de-Usabilidad" title="Criterios de Usabilidad">Criterios de Usabilidad</a></li>
+<li><a href="#Implicancias-de-los-usuarios-en-el-diseño" title="Implicancias de los usuarios en el diseño">Implicancias de los usuarios en el diseño</a></li>
+<li><a href="#Hipótesis" title="Hipótesis">Hipótesis</a></li>
+<li><a href="#Conclusiones" title="Conclusiones">Conclusiones</a></li>
+</ul>
+</li>
+<li><a href="#Informe-de-la-Parte-02-Alternativas-de-diseño" title="Informe de la Parte 02: Alternativas de diseño">Informe de la Parte 02: Alternativas de diseño</a><ul class="nav">
+<li><a href="#Diseño-de-la-aplicacion-web-en-pantallas-descktop" title="Diseño de la aplicacion web en pantallas descktop.">Diseño de la aplicacion web en pantallas descktop.</a><ul class="nav">
+<li><a href="#1-Cliente-B2C" title="1. Cliente B2C">1. Cliente B2C</a></li>
+<li><a href="#2-Cliente-B2B" title="2. Cliente B2B:">2. Cliente B2B:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
