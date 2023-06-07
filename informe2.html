@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        PRÁCTICA CALIFICADA 3 - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{background:#fff;color:#333;display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{background-color:#eaffea;color:#55a532}.hljs-deletion{background-color:#ffecec;color:#bd2c00}.hljs-link{text-decoration:underline}.markdown-body{word-wrap:break-word;font-size:16px;line-height:1.5}.markdown-body:after,.markdown-body:before{content:"";display:table}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-bottom:16px;margin-top:0}.markdown-body hr{background-color:#e7e7e7;border:0;height:.25em;margin:24px 0;padding:0}.markdown-body blockquote{border-left:.25em solid #ddd;color:#777;font-size:16px;padding:0 1em}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{background-color:#fcfcfc;border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb;color:#555;display:inline-block;font-size:11px;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{border-bottom:1px solid #eee;padding-bottom:.3em}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{color:#777;font-size:.85em}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{list-style-type:none;padding:0}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-bottom:0;margin-top:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{font-size:1em;font-style:italic;font-weight:700;margin-top:16px;padding:0}.markdown-body dl dd{margin-bottom:16px;padding:0 16px}.markdown-body table{display:block;overflow:auto;width:100%;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{border:1px solid #ddd;padding:6px 13px}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{background-color:#fff;box-sizing:initial;max-width:100%}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{background-color:initial;max-width:none;vertical-align:text-top}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{border:1px solid #ddd;display:block;float:left;margin:13px 0 0;overflow:hidden;padding:7px;width:auto}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{clear:both;color:#333;display:block;padding:5px 0 0}.markdown-body span.align-center{clear:both;display:block;overflow:hidden}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{clear:both;display:block;overflow:hidden}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{background-color:#0000000a;border-radius:3px;font-size:85%;margin:0;padding:.2em 0}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{content:"\00a0";letter-spacing:-.2em}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{background:#0000;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{background-color:#f7f7f7;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown-body pre code,.markdown-body pre tt{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{background:#fff;border:0;padding:10px 8px 9px;text-align:right}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{background:#f8f8f8;border-top:0;font-weight:700}.news .alert .markdown-body blockquote{border:0;padding:0 0 0 40px}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{cursor:default!important;float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle}.markdown-body{max-width:758px;overflow:visible!important;padding-bottom:40px;padding-top:40px;position:relative}.markdown-body.next-editor{overflow-x:hidden!important}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{border-right:3px solid #6ce26c!important;box-sizing:initial;color:#afafaf!important;cursor:default;display:inline-block;min-width:20px;padding:0 8px 0 0;position:relative;text-align:right;z-index:4}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-bottom:none;border-left:none;border-top:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-collapse:inherit!important;border-spacing:0}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{margin-bottom:unset;overflow:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p:last-child{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{background-color:inherit;border-radius:0;overflow:visible;text-align:center;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{height:100%;max-width:100%}.markdown-body pre>code.wrap{word-wrap:break-word;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap}.markdown-body .alert>p:last-child,.markdown-body .alert>ul:last-child{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{background-color:#000;background-position:50%;background-repeat:no-repeat;background-size:contain;cursor:pointer;display:table;overflow:hidden;text-align:center}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{object-fit:contain;width:100%;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{height:100%;left:0;position:absolute;top:0;width:100%}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{color:#fff;height:auto;left:50%;opacity:.3;position:absolute;top:50%;transform:translate(-50%,-50%);transition:opacity .2s;width:auto;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.figma{display:table;padding-bottom:56.25%;position:relative;width:100%}.figma iframe{border:1px solid #eee;bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.markmap-container{height:300px}.markmap-container>svg{height:100%;width:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{color:#777;margin:25px auto -25px;max-width:760px;position:relative;z-index:2}.toc .invisable-node{list-style-type:none}.ui-toc{bottom:20px;position:fixed;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{border-bottom-left-radius:0;border-top-left-radius:0;height:40px;padding:10px 4px}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{color:#fff;opacity:1;transition:opacity .2s}.ui-toc-label:focus{background-color:#ccc;color:#000;opacity:.3}.ui-toc-label:hover{background-color:#ccc;opacity:1;transition:opacity .2s}.ui-toc-dropdown{margin-bottom:20px;margin-top:20px;max-height:70vh;max-width:45vw;overflow:auto;padding-left:10px;padding-right:10px;text-align:inherit;width:25vw}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{letter-spacing:.0029em;padding-right:0}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{color:#767676;display:block;font-size:13px;font-weight:500;padding:4px 20px}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{background-color:initial;border-left:1px solid #000;color:#000;padding-left:19px;text-decoration:none}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{border-left:none;border-right:1px solid #000;padding-right:19px}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{background-color:initial;border-left:2px solid #000;color:#000;font-weight:700;padding-left:18px}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{border-left:none;border-right:2px solid #000;padding-right:18px}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:30px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:40px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{font-weight:500;padding-left:28px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{font-weight:500;padding-left:38px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{max-height:70vh;max-width:15vw;overflow:auto;position:fixed;top:0}.back-to-top,.expand-toggle,.go-to-bottom{color:#999;display:block;font-size:12px;font-weight:500;margin-left:10px;margin-top:10px;padding:4px 10px}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{background-position:50%;background-repeat:no-repeat;background-size:cover;border-radius:50%;display:block;height:20px;margin-bottom:2px;margin-right:5px;margin-top:2px;width:20px}.ui-user-icon.small{display:inline-block;height:18px;margin:0 0 .2em;vertical-align:middle;width:18px}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;padding-left:22px;text-decoration:none}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}.inline-spoiler-section{cursor:pointer}.inline-spoiler-section .spoiler-text{background-color:#333;border-radius:2px}.inline-spoiler-section .spoiler-text>*{opacity:0}.inline-spoiler-section .spoiler-img{filter:blur(10px)}.inline-spoiler-section.raw{background-color:#333;border-radius:2px}.inline-spoiler-section.raw>*{opacity:0}.inline-spoiler-section.unveil{cursor:auto}.inline-spoiler-section.unveil .spoiler-text{background-color:#3333331a}.inline-spoiler-section.unveil .spoiler-text>*{opacity:1}.inline-spoiler-section.unveil .spoiler-img{filter:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{color:#222;position:relative;z-index:1}.markdown-body.slides:before{background-color:currentColor;bottom:0;box-shadow:0 0 0 50vw;content:"";display:block;left:0;position:absolute;right:0;top:0;z-index:-1}.markdown-body.slides section[data-markdown]{background-color:#fff;margin-bottom:1.5em;position:relative;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{left:1em;max-height:100%;overflow:hidden;position:absolute;right:1em;top:50%;transform:translateY(-50%)}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{border:3px solid #777;content:"";height:1.5em;position:absolute;right:1em;top:-1.5em}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}svg{text-shadow:none}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h1 id="PRÁCTICA-CALIFICADA-3" data-id="PRÁCTICA-CALIFICADA-3"><a class="anchor hidden-xs" href="#PRÁCTICA-CALIFICADA-3" title="PRÁCTICA-CALIFICADA-3"><span class="octicon octicon-link"></span></a><span>PRÁCTICA CALIFICADA 3</span></h1><h2 id="Requerimientos-no-funcionales" data-id="Requerimientos-no-funcionales"><a class="anchor hidden-xs" href="#Requerimientos-no-funcionales" title="Requerimientos-no-funcionales"><span class="octicon octicon-link"></span></a><span>Requerimientos no funcionales</span></h2><h3 id="1-Carga-rápida" data-id="1-Carga-rápida"><a class="anchor hidden-xs" href="#1-Carga-rápida" title="1-Carga-rápida"><span class="octicon octicon-link"></span></a><span>1. Carga rápida</span></h3><p><span>La aplicación debe cargar rápidamente para ofrecer una experiencia fluida a los usuarios y minimizar los tiempos de espera.</span><br>
+<span>Para lograr alcanzar este requerimiento, se pueden realizar las siguientes configuraciones en la interfaz:</span></p><ul>
+<li><span>Comprimir y ajustar el tamaño de las imágenes y archivos multimedia para reducir el tiempo de carga.</span></li>
+<li><span>Implementar técnicas de almacenamiento en caché para almacenar en el dispositivo del usuario los elementos estáticos de la aplicación, lo que permite cargarlos más rápido en visitas posteriores.</span></li>
+<li><span>Minimizar y comprimir los archivos de código (HTML, CSS, JavaScript) para reducir su tamaño y mejorar la velocidad de carga.</span></li>
+<li><span>Cargar inicialmente solo el contenido visible en la pantalla y luego cargar de manera progresiva el contenido adicional</span></li>
+</ul><h3 id="2-Seguridad" data-id="2-Seguridad"><a class="anchor hidden-xs" href="#2-Seguridad" title="2-Seguridad"><span class="octicon octicon-link"></span></a><span>2. Seguridad</span></h3><p><span>La aplicación debe garantizar la seguridad de la información del usuario, como datos personales y de pago, mediante la implementación de encriptación de datos.</span><br>
+<span>Al estar desarrollando la aplicación usando Firebase, se provee de mecanismos de seguridad inherentes al acceso de cuentas a través de Google, como los siguientes:</span></p><ul>
+<li><span>Autenticación de cuentas seguro</span></li>
+<li><span>Almacenamiento de datos en la nube, protegido por Google</span></li>
+<li><span>Protección contra ataques, mediante filtros y validaciones implementados por Firebase</span></li>
+<li><span>Gestión de identidades y roles, lo que evita que usuarios no autorizados realicen acciones fuera de sus capacidades.</span></li>
+</ul><h3 id="3-Accesibilidad" data-id="3-Accesibilidad"><a class="anchor hidden-xs" href="#3-Accesibilidad" title="3-Accesibilidad"><span class="octicon octicon-link"></span></a><span>3. Accesibilidad</span></h3><p><span>La aplicación debe ser accesible para usuarios con discapacidades, brindando una experiencia inclusiva y facilitando su uso.</span><br>
+<span>Se planea usar interfaz de control de voz para poder navegar a través de la aplicación, por lo que se deben cumplir los siguientes criterios:</span></p><ul>
+<li><span>Etiquetar debidamente a través de HTML los elementos interactivos de la página, para que sean fácilmente descritos al usuario y seleccionados mediante comandos por voz.</span></li>
+<li><span>La estructura de navegación de la aplicación debe ser clara y lógica, lo que permitirá a las personas con discapacidad visual parcial moverse de manera eficiente entre las diferentes secciones y funciones de la aplicación utilizando comandos de voz.</span></li>
+<li><span>Proporcionar opciones de personalización para adaptar la interfaz a las preferencias individuales de los usuarios. Esto puede incluir ajustes de velocidad de la voz, preferencias de lectura y opciones de navegación específicas para satisfacer las necesidades de las personas con discapacidad visual parcial.</span></li>
+</ul><h3 id="4-Escalabilidad" data-id="4-Escalabilidad"><a class="anchor hidden-xs" href="#4-Escalabilidad" title="4-Escalabilidad"><span class="octicon octicon-link"></span></a><span>4. Escalabilidad</span></h3><p><span>La aplicación debe ser capaz de manejar un aumento en el número de usuarios y transacciones sin degradar el rendimiento.</span></p><ul>
+<li><span>Firebase proporciona una infraestructura escalable en la nube, lo que significa que la aplicación puede adaptarse automáticamente a los picos de demanda y al aumento del tráfico sin intervención manual.</span></li>
+<li><span>Además, incluye el Firebase Cloud Storage, un servicio de almacenamiento en la nube que permite almacenar y servir contenido estático, como imágenes, videos y archivos. Este almacenamiento se escala automáticamente para adaptarse a la demanda, asegurando una entrega rápida y confiable del contenido a los usuarios.</span></li>
+<li><span>Adicionalmente, también cuenta con centros de datos alrededor del mundo, lo que permite que la aplicación se pueda escalar y esté disponible en muchas regiones del mundo de manera rápida.</span></li>
+</ul><h3 id="5-Usabilidad" data-id="5-Usabilidad"><a class="anchor hidden-xs" href="#5-Usabilidad" title="5-Usabilidad"><span class="octicon octicon-link"></span></a><span>5. Usabilidad</span></h3><p><span>La aplicación debe ser fácil de usar y proporcionar una experiencia intuitiva y agradable para los usuarios.</span><br>
+<span>Para lograr este requerimiento, se debe:</span></p><ul>
+<li><span>Realizar pruebas de usabilidad y recopilar comentarios de los usuarios para iterar y mejorar continuamente la interfaz de usuario.</span></li>
+<li><span>Establecer una estructura de navegación lógica y coherente que permita a los usuarios moverse fácilmente por la aplicación y encontrar la información o las funciones que necesitan.</span></li>
+<li><span>Adaptar la interfaz de usuario a diferentes dispositivos y tamaños de pantalla para garantizar una experiencia consistente</span></li>
+<li><span>Permitir a los usuarios personalizar ciertos aspectos de la aplicación</span></li>
+</ul><h2 id="Requerimientos-Funcionales" data-id="Requerimientos-Funcionales"><a class="anchor hidden-xs" href="#Requerimientos-Funcionales" title="Requerimientos-Funcionales"><span class="octicon octicon-link"></span></a><span>Requerimientos Funcionales</span></h2><h3 id="1-Registro-de-usuario-Público-en-la-aplicación" data-id="1-Registro-de-usuario-Público-en-la-aplicación"><a class="anchor hidden-xs" href="#1-Registro-de-usuario-Público-en-la-aplicación" title="1-Registro-de-usuario-Público-en-la-aplicación"><span class="octicon octicon-link"></span></a><span>1. Registro de usuario (Público) en la aplicación</span></h3><h4 id="Requerimientos" data-id="Requerimientos"><a class="anchor hidden-xs" href="#Requerimientos" title="Requerimientos"><span class="octicon octicon-link"></span></a><span>Requerimientos:</span></h4><p><span>El sistema debe permitir a los usuarios crear una cuenta en la aplicación.</span><br>
+<span>Los usuarios deben proporcionar información como nombre, dirección de correo electrónico y contraseña para registrarse.</span><br>
+<span>El sistema debe validar la información proporcionada por el usuario durante el proceso de registro.</span><br>
+<span>El sistema debe almacenar de forma segura la información del usuario en la base de datos.</span></p><h4 id="Caso-de-uso" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso" title="Caso-de-uso"><span class="octicon octicon-link"></span></a><span>Caso de uso:</span></h4><blockquote>
+<ol>
+<li><span>El usuario abre la aplicación e inicia el proceso de registro.</span></li>
+<li><span>El sistema muestra un formulario de registro que solicita información como nombre, dirección de correo electrónico y contraseña.</span></li>
+<li><span>El usuario completa el formulario con la información requerida.</span></li>
+<li><span>El sistema valida la información ingresada por el usuario.</span></li>
+<li><span>Si la validación es exitosa, el sistema almacena de forma segura la información del usuario en la base de datos y genera una cuenta para el usuario.</span></li>
+<li><span>El sistema muestra un mensaje de confirmación al usuario, indicando que el registro se ha completado con éxito.</span></li>
+<li><span>El usuario puede iniciar sesión en la aplicación utilizando las credenciales proporcionadas durante el registro</span></li>
+</ol>
+</blockquote><h3 id="2-Búsqueda-local-de-restaurantes" data-id="2-Búsqueda-local-de-restaurantes"><a class="anchor hidden-xs" href="#2-Búsqueda-local-de-restaurantes" title="2-Búsqueda-local-de-restaurantes"><span class="octicon octicon-link"></span></a><span>2. Búsqueda local de restaurantes</span></h3><h4 id="Requerimientos1" data-id="Requerimientos"><a class="anchor hidden-xs" href="#Requerimientos1" title="Requerimientos1"><span class="octicon octicon-link"></span></a><span>Requerimientos:</span></h4><p><span>El sistema debe permitir a los usuarios buscar restaurantes cercanos a su ubicación actual.</span><br>
+<span>El sistema debe utilizar la ubicación del usuario para mostrar los restaurantes más relevantes en el área.</span><br>
+<span>Los usuarios deben poder ver información detallada sobre cada restaurante, como su nombre, dirección y calificaciones.</span></p><h4 id="Caso-de-uso1" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso1" title="Caso-de-uso1"><span class="octicon octicon-link"></span></a><span>Caso de uso:</span></h4><blockquote>
+<ol>
+<li><span>El usuario abre la aplicación y selecciona la opción de búsqueda de restaurantes locales.</span></li>
+<li><span>El sistema utiliza la ubicación del usuario para mostrar los restaurantes cercanos en una lista.</span></li>
+<li><span>El usuario puede desplazarse por la lista para ver los nombres y las calificaciones de los restaurantes.</span></li>
+<li><span>Si el usuario selecciona un restaurante específico, el sistema muestra información detallada sobre el restaurante, como su dirección, horario de atención y categoría de comida.</span></li>
+<li><span>El usuario puede realizar acciones adicionales, como llamar al restaurante o agregarlo a sus favoritos.</span></li>
+</ol>
+</blockquote><h3 id="3-Filtros-de-búsqueda" data-id="3-Filtros-de-búsqueda"><a class="anchor hidden-xs" href="#3-Filtros-de-búsqueda" title="3-Filtros-de-búsqueda"><span class="octicon octicon-link"></span></a><span>3. Filtros de búsqueda</span></h3><h4 id="Requerimientos2" data-id="Requerimientos"><a class="anchor hidden-xs" href="#Requerimientos2" title="Requerimientos2"><span class="octicon octicon-link"></span></a><span>Requerimientos:</span></h4><p><span>El sistema debe proporcionar filtros para refinar la búsqueda de restaurantes.</span><br>
+<span>Los usuarios deben poder filtrar los resultados por categoría de comida, rango de precios, calificaciones, etc.</span><br>
+<span>Los usuarios deben poder aplicar múltiples filtros para obtener resultados más precisos.</span></p><h4 id="Caso-de-uso2" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso2" title="Caso-de-uso2"><span class="octicon octicon-link"></span></a><span>Caso de uso:</span></h4><blockquote>
+<ol>
+<li><span>El usuario abre la aplicación y accede a la opción de búsqueda de restaurantes.</span></li>
+<li><span>El sistema muestra una interfaz de búsqueda con opciones de filtros.</span></li>
+<li><span>El usuario selecciona los filtros deseados, como categoría de comida, rango de precios y calificaciones.</span></li>
+<li><span>El sistema aplica los filtros seleccionados y muestra los resultados actualizados.</span></li>
+<li><span>El usuario puede explorar los resultados y ver los restaurantes que cumplen con los criterios de los filtros aplicados.</span></li>
+<li><span>Si el usuario desea realizar una búsqueda más precisa, puede aplicar filtros adicionales o modificar los existentes.</span></li>
+<li><span>El usuario puede realizar acciones adicionales, como ordenar los resultados por calificación o distancia.</span></li>
+<li><span>El usuario puede seleccionar un restaurante específico de los resultados filtrados para ver más detalles o realizar un pedido.</span></li>
+</ol>
+</blockquote><h3 id="4-Solicitar-recogida-en-el-establecimiento" data-id="4-Solicitar-recogida-en-el-establecimiento"><a class="anchor hidden-xs" href="#4-Solicitar-recogida-en-el-establecimiento" title="4-Solicitar-recogida-en-el-establecimiento"><span class="octicon octicon-link"></span></a><span>4. Solicitar recogida en el establecimiento</span></h3><h4 id="Requerimientos3" data-id="Requerimientos"><a class="anchor hidden-xs" href="#Requerimientos3" title="Requerimientos3"><span class="octicon octicon-link"></span></a><span>Requerimientos:</span></h4><p><span>El sistema debe permitir a los usuarios realizar pedidos para recoger en el restaurante.</span><br>
+<span>Los usuarios deben poder seleccionar un restaurante y ver su menú.</span><br>
+<span>Los usuarios deben poder agregar elementos del menú a su pedido.</span><br>
+<span>Los usuarios deben proporcionar detalles adicionales, como el tiempo estimado de recogida.</span><br>
+<span>El sistema debe enviar una confirmación del pedido al usuario y al restaurante.</span></p><h4 id="Caso-de-uso3" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso3" title="Caso-de-uso3"><span class="octicon octicon-link"></span></a><span>Caso de uso:</span></h4><blockquote>
+<ol>
+<li><span>El usuario abre la aplicación y busca el restaurante deseado.</span></li>
+<li><span>El sistema muestra el menú del restaurante al usuario.</span></li>
+<li><span>El usuario selecciona los elementos deseados del menú y los agrega a su pedido.</span></li>
+<li><span>El usuario proporciona detalles adicionales, como el tiempo estimado de recogida y cualquier solicitud especial.</span></li>
+<li><span>El sistema muestra un resumen del pedido al usuario para su revisión.</span></li>
+<li><span>Si el usuario confirma el pedido, el sistema envía una confirmación al usuario y al restaurante.</span></li>
+<li><span>El usuario puede recibir actualizaciones sobre el estado de su pedido y se le notifica cuando esté listo para su recogida.</span></li>
+</ol>
+</blockquote><h3 id="5-Reservar-en-un-restaurante-para-consumo-en-el-lugar" data-id="5-Reservar-en-un-restaurante-para-consumo-en-el-lugar"><a class="anchor hidden-xs" href="#5-Reservar-en-un-restaurante-para-consumo-en-el-lugar" title="5-Reservar-en-un-restaurante-para-consumo-en-el-lugar"><span class="octicon octicon-link"></span></a><span>5. Reservar en un restaurante para consumo en el lugar</span></h3><h4 id="Requerimientos4" data-id="Requerimientos"><a class="anchor hidden-xs" href="#Requerimientos4" title="Requerimientos4"><span class="octicon octicon-link"></span></a><span>Requerimientos</span></h4><p><span>El usuario necesita solicitar un consumo en local de manera que se le genere una reserva y pago por adelantado previa validación del servicio que esta por solicitar.</span></p><h4 id="Caso-de-uso4" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso4" title="Caso-de-uso4"><span class="octicon octicon-link"></span></a><span>Caso de uso</span></h4><ol>
+<li><span>Un usuario que ya selecciono un local de comida y los platos a pedir, en ese momento aun se encuentra en la ultima hora de su jornada laboral y quiere reservarse un lugar en un restaurante determinado.</span></li>
+<li><span>El sistema valida que el negocio haya permitido esa modalidad desde su configuraciòn.</span></li>
+<li><span>El sistema valida que el restaurante confirme su disponibilidad para garantizar informaciòn actualizada.</span></li>
+<li><span>El restaurante valida disponibilidad fisica.</span></li>
+<li><span>El sistema habilita el boton de “Pedir delivery”.</span></li>
+<li><span>El usuario la selecciona, y se genera la peticiòn</span></li>
+</ol><blockquote>
+<p><span>El proceso anterior es transparente para el usuario.</span></p>
+</blockquote><h3 id="6-Solicitar-entrega-a-domicilio-a-un-restaurante" data-id="6-Solicitar-entrega-a-domicilio-a-un-restaurante"><a class="anchor hidden-xs" href="#6-Solicitar-entrega-a-domicilio-a-un-restaurante" title="6-Solicitar-entrega-a-domicilio-a-un-restaurante"><span class="octicon octicon-link"></span></a><span>6. Solicitar entrega a domicilio a un restaurante</span></h3><h4 id="Requerimientos5" data-id="Requerimientos"><a class="anchor hidden-xs" href="#Requerimientos5" title="Requerimientos5"><span class="octicon octicon-link"></span></a><span>Requerimientos</span></h4><p><span>El usuario necesita que su pedido sea entregado en un lugar determinado que requiera.</span></p><h4 id="Caso-de-uso5" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso5" title="Caso-de-uso5"><span class="octicon octicon-link"></span></a><span>Caso de uso</span></h4><ol>
+<li><span>Un usuario que ya seleccionó un local de comida y los platos a pedir necesita que le lleven su pedido a su lugar de trabajo pues esta muy ocupado.</span></li>
+<li><span>El sistema valida que el negocio disponga de esa modalidad de entrega.</span></li>
+<li><span>El sistema notifica al restaurante que valide disponibilidad en ese instante.</span></li>
+<li><span>El restaurante confirma disponibilidad de servicio.</span></li>
+<li><span>El sistema habilita el boton de “Pedir delivery”.</span></li>
+<li><span>El usuario selecciona el boton “Pedir delivery”</span></li>
+<li><span>El sistema crea la orden a la posiciòn actual del usuario.</span></li>
+<li><span>De no registrar GPS, debera ingresarlo manualmente.</span></li>
+</ol><p><img src="https://hackmd.io/_uploads/BkeWQVRIh.png" alt="" loading="lazy"></p><h3 id="7-Sistema-de-reseñas" data-id="7-Sistema-de-reseñas"><a class="anchor hidden-xs" href="#7-Sistema-de-reseñas" title="7-Sistema-de-reseñas"><span class="octicon octicon-link"></span></a><span>7. Sistema de reseñas</span></h3><h4 id="Requerimientos6" data-id="Requerimientos"><a class="anchor hidden-xs" href="#Requerimientos6" title="Requerimientos6"><span class="octicon octicon-link"></span></a><span>Requerimientos</span></h4><p><span>El usuario necesita un criterio basado en experiencias de otros usuarios para elegir un local.</span></p><h4 id="Caso-de-uso6" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso6" title="Caso-de-uso6"><span class="octicon octicon-link"></span></a><span>Caso de uso</span></h4><ol>
+<li><span>Un usuario esta explorando el catalogo de restaurantes y quiere saber cual restaurante ofrece mejor servicio.</span></li>
+<li><span>El sistema muestra en la tarjeta de cada restaurante los “likes” recibidos por clientes  previos.</span></li>
+<li><span>El usuario, decide su compra basado en esa información adicional.</span></li>
+</ol><p><img src="https://hackmd.io/_uploads/Hyo2xBRI3.png" alt="" loading="lazy"></p><h3 id="8-Visualizar-pedidos-activos-y-pasados" data-id="8-Visualizar-pedidos-activos-y-pasados"><a class="anchor hidden-xs" href="#8-Visualizar-pedidos-activos-y-pasados" title="8-Visualizar-pedidos-activos-y-pasados"><span class="octicon octicon-link"></span></a><span>8. Visualizar pedidos activos y pasados</span></h3><h4 id="Requerimientos7" data-id="Requerimientos"><a class="anchor hidden-xs" href="#Requerimientos7" title="Requerimientos7"><span class="octicon octicon-link"></span></a><span>Requerimientos</span></h4><p><span>El usuario necesita hacer seguimiento de sus pedidos delivery, sus reservaciones de consumo en local, o recojo.</span></p><h4 id="Caso-de-uso-1" data-id="Caso-de-uso-1"><a class="anchor hidden-xs" href="#Caso-de-uso-1" title="Caso-de-uso-1"><span class="octicon octicon-link"></span></a><span>Caso de uso 1</span></h4><ol>
+<li><span>Un usuario que ya solicito un pedido de delivery quiere saber el estado de su pedido.</span></li>
+<li><span>El sistema muestra una tarjeta con información de su pedido, y su estado correspondiente(preparando, enviado, entregado).</span></li>
+</ol><h4 id="Caso-de-uso-2" data-id="Caso-de-uso-2"><a class="anchor hidden-xs" href="#Caso-de-uso-2" title="Caso-de-uso-2"><span class="octicon octicon-link"></span></a><span>Caso de uso 2</span></h4><ol>
+<li><span>Un usuario quiere revisar los restaurantes que visito ultimamente para solicitar un servicio basado en uno previo, o emitir una calificación de un local que anteriormente olvido completar.</span></li>
+<li><span>El sistema le muestra cartillas de sus atenciones previas.</span></li>
+<li><span>El usuario selecciona ver màs detalles de una atencion previa.</span></li>
+<li><span>El usuario puntua al restaurante, y solicita nuevamente ese mismo pedido directamente sin armarlo primero.</span></li>
+</ol><p><img src="https://hackmd.io/_uploads/H1teqBRU3.png" alt="" loading="lazy"></p><h3 id="9-Registro-de-negocio-en-la-aplicacion" data-id="9-Registro-de-negocio-en-la-aplicacion"><a class="anchor hidden-xs" href="#9-Registro-de-negocio-en-la-aplicacion" title="9-Registro-de-negocio-en-la-aplicacion"><span class="octicon octicon-link"></span></a><span>9. Registro de negocio en la aplicacion</span></h3><p><img src="https://hackmd.io/_uploads/rkCk2fAIh.png" alt="" loading="lazy"></p><h4 id="Requerimientos-" data-id="Requerimientos-"><a class="anchor hidden-xs" href="#Requerimientos-" title="Requerimientos-"><span class="octicon octicon-link"></span></a><span>Requerimientos :</span></h4><p><span>Registro del negocio: El usuario desea poder registrar su negocio en la aplicación, proporcionando información como nombre, dirección y ruc.</span></p><h4 id="Caso-de-uso7" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso7" title="Caso-de-uso7"><span class="octicon octicon-link"></span></a><span>Caso de uso:</span></h4><blockquote>
+<ol>
+<li><span>Usuario (Dueño del negocio): Ingresa a la aplicación y selecciona la &gt;opción de “Registrar mi negocio”.</span></li>
+</ol>
+</blockquote><blockquote>
+<ol start="2">
+<li><span>Sistema: Saluda al usuario y le solicita que proporcione la información &gt;necesaria para el registro del negocio, como el nombre del negocio, &gt;dirección y ruc .</span></li>
+</ol>
+</blockquote><blockquote>
+<ol start="3">
+<li><span>Usuario (Dueño del negocio): Completa los campos requeridos con la información del negocio, como “Las Delicias Peruanas”, dirección “Henry Arredondo 154, San Martín de Porres 15102, Peru” y ruc 20123456789".</span></li>
+</ol>
+</blockquote><blockquote>
+<ol start="4">
+<li><span>Sistema: Valida la información proporcionada y solicita al usuario que verifique los datos antes de proceder.</span></li>
+</ol>
+</blockquote><blockquote>
+<ol start="5">
+<li><span>Sistema: El sistema redirige al usuario al perfil de su nuevo restaurante.</span></li>
+</ol>
+</blockquote><h3 id="10-Customizar-perfil-restaurante" data-id="10-Customizar-perfil-restaurante"><a class="anchor hidden-xs" href="#10-Customizar-perfil-restaurante" title="10-Customizar-perfil-restaurante"><span class="octicon octicon-link"></span></a><span>10. Customizar perfil restaurante:</span></h3><p><img src="https://hackmd.io/_uploads/S1p8zXR83.png" alt="" loading="lazy"></p><h4 id="Requeriminetos-del-usurio" data-id="Requeriminetos-del-usurio"><a class="anchor hidden-xs" href="#Requeriminetos-del-usurio" title="Requeriminetos-del-usurio"><span class="octicon octicon-link"></span></a><span>Requeriminetos del usurio:</span></h4><p><span>Customizar apariencia y datos principales:  El usuario quiere tener la opción, customizar la apariencia, configurar logo y fondo, quiere configurar el tipo de negocio, horario de atencion, habilitar los servicios que desea ofrecer a través de la aplicación, como entrega a domicilio, recogida en el local y comer en el local.</span></p><h4 id="Caso-de-uso8" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso8" title="Caso-de-uso8"><span class="octicon octicon-link"></span></a><span>Caso de uso:</span></h4><blockquote>
+<p><span>Sistema: Muestra al usuario, las opciones de presentacion del restaurante (Logo, fondo, nombre y frase), el tipo de restaurante (criollo, marino,chifa,etc ), el horario de atencion ,las opciones de servicios que ofrece la aplicación , como entrega a domicilio, recogida en el local y comer en el local y le solicita que seleccione los que desea habilitar, y metodos de pago.</span></p>
+</blockquote><blockquote>
+<p><span>Usuario (Negocio): Configura la apariencia, configura el tipo de negocio, configura el horario de atencion, habilita las opciones de atencion, en este caso, entrega a domicilio y recogida en el local, y el metodo de pago.</span></p>
+</blockquote><blockquote>
+<p><span>Usuario (Dueño del negocio): Completa los campos adicionales con la información correspondiente, como horarios de atención de 10:00 a.m. a 10:00 p.m., tipo de restaurante (Criollo) y métodos de pago aceptados Yape (Agrega el codigo QR).</span></p>
+</blockquote><h3 id="11-Customizar-Platillos-Menu-Restaurante" data-id="11-Customizar-Platillos-Menu-Restaurante"><a class="anchor hidden-xs" href="#11-Customizar-Platillos-Menu-Restaurante" title="11-Customizar-Platillos-Menu-Restaurante"><span class="octicon octicon-link"></span></a><span>11. Customizar Platillos (Menu) Restaurante</span></h3><p><img src="https://hackmd.io/_uploads/HkMzQm083.png" alt="" loading="lazy"></p><h4 id="Requerimientos-del-usuario" data-id="Requerimientos-del-usuario"><a class="anchor hidden-xs" href="#Requerimientos-del-usuario" title="Requerimientos-del-usuario"><span class="octicon octicon-link"></span></a><span>Requerimientos del usuario:</span></h4><p><span>Customización del menú: El usuario necesita tener la capacidad de customizar el menú de su negocio, lo que incluye agregar secciones y subsecciones , nuevos platillos, actualizar la información de los platillos existentes y eliminar platillos del menú, y eliminar secciones o subsecciones.</span></p><p><span>Agregar seccion o subseccion: El usuario debe poder agregar secciones o subsecciones para agrupar platillos por precio o caracteristicas similares.</span></p><p><span>Agregar platillos: El usuario debe poder agregar nuevos platillos al menú proporcionando información como nombre, foto, descripción y precio.</span></p><p><span>Actualizar platillos: El usuario necesita la opción de modificar la información de los platillos existentes, como actualizar el nombre, la foto, la descripción o el precio.</span></p><p><span>Eliminar platillos: El usuario requiere la posibilidad de eliminar platillos que ya no están disponibles o que desee retirar del menú.</span></p><p><span>Eliminar seccion o subseccion: El usuario debe poder eliminar secciones o subsecciones.</span></p><h4 id="Caso-de-uso9" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso9" title="Caso-de-uso9"><span class="octicon octicon-link"></span></a><span>Caso de uso</span></h4><blockquote>
+<p><strong><span>Crear seccion</span></strong><span>:</span><br>
+<span>Usuario (Negocio): Agrega un seccion generica, o una seccion de [Menu] que contiene una plantilla de subsecciones para agregar las entrada y los tipos de menu (Menu clasico, Menu ejecutivo, etc).</span></p>
+</blockquote><blockquote>
+<p><strong><span>Crear Subseccion</span></strong><span>:</span><br>
+<span>Usuario (Negocio): Agrega una subseccion, Para agregar platillos similares, en precio o caracteristicas cualitativas.</span></p>
+</blockquote><blockquote>
+<p><strong><span>Agregar platillo</span></strong><span>:</span><br>
+<span>Usuario (Negocio): Selecciona la opción de “Agregar platillo” y proporciona la información necesaria para el nuevo platillo, como nombre, foto, descripción y precio.</span><br>
+<span>Sistema: Valida la información ingresada y agrega el nuevo platillo al menú del negocio.</span></p>
+</blockquote><blockquote>
+<p><strong><span>Actualizar platillo</span></strong><span>:</span><br>
+<span>Usuario (Negocio): Selecciona la opción de “Actualizar platillo” y elige el platillo que desea modificar de la lista (Modifica nombre, foto,precio, etc).</span><br>
+<span>Sistema: Muestra la información actual del platillo seleccionado y permite al usuario realizar los cambios necesarios, como actualizar el nombre, la foto, la descripción o el precio.</span><br>
+<span>Sistema: Actualiza la información del platillo en el menú del negocio.</span></p>
+</blockquote><blockquote>
+<p><strong><span>Eliminar platillo</span></strong><span>:</span><br>
+<span>Usuario (Negocio): Selecciona la opción de “Eliminar platillo” y elige el platillo que desea eliminar de la lista.</span><br>
+<span>Sistema: Muestra una confirmación al usuario para asegurarse de que desea eliminar el platillo seleccionado.</span><br>
+<span>Usuario (Dueño del negocio): Confirma la eliminación del platillo.</span><br>
+<span>Sistema: Elimina el platillo seleccionado del menú del negocio.</span></p>
+</blockquote><blockquote>
+<p><strong><span>Eliminar subseccion y seccion</span></strong><span>:</span><br>
+<span>Usuario (Negocio): Selecciona la opción de eliminar seccion o subseccion.</span><br>
+<span>Sistema: Muestra una confirmación al usuario para asegurarse de que desea eliminar la seccion o subsecion.</span><br>
+<span>Usuario (Dueño del negocio): Confirma la eliminación.</span><br>
+<span>Sistema: Elimina el platillo seleccionado del menú del negocio.</span></p>
+</blockquote><h3 id="12-DashBoard-de-cada-restaurante" data-id="12-DashBoard-de-cada-restaurante"><a class="anchor hidden-xs" href="#12-DashBoard-de-cada-restaurante" title="12-DashBoard-de-cada-restaurante"><span class="octicon octicon-link"></span></a><span>12. DashBoard de cada restaurante:</span></h3><p><img src="https://hackmd.io/_uploads/B1ITvmCU2.png" alt="" loading="lazy"></p><h4 id="Requerimientos-del-usuario1" data-id="Requerimientos-del-usuario"><a class="anchor hidden-xs" href="#Requerimientos-del-usuario1" title="Requerimientos-del-usuario1"><span class="octicon octicon-link"></span></a><span>Requerimientos del usuario:</span></h4><p><span>Dashboard de pedidos: El usuario necesita tener acceso a un dashboard o panel de control que muestre una vista general de los pedidos realizados por los clientes.</span></p><p><span>Organización por tipo de pedido: El usuario requiere la capacidad de visualizar los pedidos por tipo, como “Recoger en Local”, “Comer en local” y “Delivery”, para mantener una mejor organización.</span></p><p><span>Estado de los pedidos: El usuario debe poder ver el estado actual de cada orden, como resibido, preparando , listo para despachar o entregado.</span></p><p><span>Datos del pedido: El usuario necesita acceder a la la lista de platillos pedidos.</span></p><p><span>Datos del cliente: El usuario necesita acceder a los datos del cliente correspondientes a cada pedido, como número de teléfono, ubicación, nombre y código de pedido, para brindar un mejor servicio y cumplir con las necesidades del cliente.</span></p><p><span>Actualización de estados y notificaciones: El usuario debe tener la opción de actualizar el estado de los pedidos y, si es necesario, enviar notificaciones al cliente para mantenerlo informado sobre cualquier cambio o actualización en su pedido.</span></p><h4 id="Caso-de-uso10" data-id="Caso-de-uso"><a class="anchor hidden-xs" href="#Caso-de-uso10" title="Caso-de-uso10"><span class="octicon octicon-link"></span></a><span>Caso de uso:</span></h4><blockquote>
+<p><span>Usuario (Negocio): Ingresa a la aplicación y accede al dashboard o panel de control.</span></p>
+<p><span>Sistema: Muestra el dashboard que brinda una vista general de los pedidos realizados por los clientes.</span></p>
+<p><span>Usuario (Negocio): Explora el dashboard y visualiza los pedidos por tipo, como “Recoger en Local”, “Comer en local” y “Delivery”.</span></p>
+<p><span>Sistema: Muestra la lista de pedidos para cada tipo, junto con el estado de cada orden.</span></p>
+<p><span>Usuario (Negocio): Examina los pedidos y sus estados para evaluar el progreso de  las órdenes.</span></p>
+<p><span>Sistema: Proporciona informacion para ver los detalles de cada pedido, como los datos del cliente (teléfono, ubicación, nombre y código de pedido) y pedido de platillos (Lista de platillos).</span></p>
+<p><span>Sistema: Ofrece opciones adicionales, como actualizar el estado del pedido, marcarlo como, resibido, preparando , listo para despachar o entregado.</span></p>
+<p><span>Usuario (Negocio): Actualiza el estado del pedido según su progreso y realiza las acciones correspondientes, como marcarlo como  resibido, preparando , listo para despachar o entregado.</span></p>
+<p><span>Sistema: Actualiza el estado del pedido en el dashboard y notifica al cliente sobre cualquier cambio.</span></p>
+</blockquote><h3 id="13-Promociones-especiales" data-id="13-Promociones-especiales"><a class="anchor hidden-xs" href="#13-Promociones-especiales" title="13-Promociones-especiales"><span class="octicon octicon-link"></span></a><span>13. Promociones especiales:</span></h3><p><img src="https://hackmd.io/_uploads/Hka4lV0Un.png" alt="" loading="lazy"></p><h4 id="Requerimientos-del-usuario2" data-id="Requerimientos-del-usuario"><a class="anchor hidden-xs" href="#Requerimientos-del-usuario2" title="Requerimientos-del-usuario2"><span class="octicon octicon-link"></span></a><span>Requerimientos del usuario:</span></h4><p><span>Gestión de promociones: El usuario necesita tener la capacidad de gestionar las promociones que ofrece a los clientes, incluyendo la capacidad de agregar nuevas promociones, actualizar la información de las promociones existentes y quitar promociones del listado.</span></p><p><span>Agregar promociones: El usuario debe poder agregar nuevas promociones, proporcionando información como el título, la descripción, las condiciones (por ejemplo, número de pedidos al mes) y los beneficios para el cliente.</span></p><p><span>Actualizar promociones: El usuario necesita la opción de modificar la información de las promociones existentes, como actualizar el título, la descripción, las condiciones o los beneficios.</span></p><p><span>Quitar promociones: El usuario requiere la posibilidad de eliminar promociones que ya no están vigentes o que desea retirar del listado.</span></p><h4 id="Caso-de-uso-Gestión-de-promociones-para-el-negocio-en-la-aplicación" data-id="Caso-de-uso-Gestión-de-promociones-para-el-negocio-en-la-aplicación"><a class="anchor hidden-xs" href="#Caso-de-uso-Gestión-de-promociones-para-el-negocio-en-la-aplicación" title="Caso-de-uso-Gestión-de-promociones-para-el-negocio-en-la-aplicación"><span class="octicon octicon-link"></span></a><span>Caso de uso: Gestión de promociones para el negocio en la aplicación</span></h4><blockquote>
+<p><span>Usuario (Negocio): Ingresa a la aplicación y accede a la sección de “Promociones”.</span></p>
+<p><span>Sistema: Saluda al usuario y muestra la lista actual de promociones disponibles para el negocio.</span></p>
+<p><span>Usuario (Dueño del negocio): Explora la lista de promociones existentes y decide agregar, actualizar o quitar promociones según sea necesario.</span></p>
+<p><span>Sistema: Ofrece las siguientes opciones al usuario: “Agregar promoción”, “Actualizar promoción” o “Quitar promoción”.</span></p>
+</blockquote><blockquote>
+<p><strong><span>Agregar promoción:</span></strong><br>
+<span>Usuario (Negocio): Selecciona la opción de “Agregar promoción” y proporciona la información necesaria para la nueva promoción, como el título de la promoción, la descripción, las condiciones (por ejemplo, número de pedidos al mes) y los beneficios para el cliente.</span></p>
+<p><span>Sistema: Valida la información ingresada y agrega la nueva promoción a la lista de promociones del negocio.</span></p>
+</blockquote><blockquote>
+<p><strong><span>Actualizar promoción:</span></strong><br>
+<span>Usuario (Negocio): Selecciona la opción de “Actualizar promoción” y elige la promoción que desea modificar de la lista.</span></p>
+<p><span>Sistema: Muestra la información actual de la promoción seleccionada y permite al usuario realizar los cambios necesarios, como actualizar el título, la descripción, las condiciones o los beneficios.</span></p>
+<p><span>Usuario (Negocio): Realiza las modificaciones deseadas y confirma los cambios.</span></p>
+<p><span>Sistema: Actualiza la información de la promoción en la lista de promociones del negocio.</span></p>
+</blockquote><blockquote>
+<p><strong><span>Quitar promoción:</span></strong><br>
+<span>Usuario (Negocio): Selecciona la opción de “Quitar promoción” y elige la promoción que desea eliminar de la lista.</span></p>
+<p><span>Sistema: Muestra una confirmación al usuario para asegurarse de que desea eliminar la promoción seleccionada.</span></p>
+<p><span>Usuario (Negocio): Confirma la eliminación de la promoción.</span></p>
+<p><span>Sistema: Elimina la promoción seleccionada de la lista de promociones del negocio.</span></p>
+<p><span>Usuario (Negocio): Explora nuevamente la lista de promociones actualizada para verificar los cambios realizados.</span></p>
+</blockquote><h2 id="Plan-de-evaluación-inicial-de-la-interfaz" data-id="Plan-de-evaluación-inicial-de-la-interfaz"><a class="anchor hidden-xs" href="#Plan-de-evaluación-inicial-de-la-interfaz" title="Plan-de-evaluación-inicial-de-la-interfaz"><span class="octicon octicon-link"></span></a><span>Plan de evaluación inicial de la interfaz</span></h2><p><span>Para realizar una evaluación de la interfaz que se ajuste a los requerimientos establecidos, podemos modificar el enfoque de la evaluación y agregar algunos aspectos relacionados con los requisitos específicos.</span></p><p><strong><span>1. Evaluación de la carga rápida (Optimización):</span></strong></p><ul>
+<li><span>Realizar pruebas de rendimiento para medir el tiempo de carga de la aplicación en diferentes escenarios.</span></li>
+<li><span>Registrar el tiempo de carga promedio de la página de inicio y de las diferentes secciones de la aplicación.</span></li>
+<li><span>Establecer un criterio de cumplimiento, como que la página de inicio debe cargarse en menos de X segundos.</span></li>
+<li><span>Evaluar el rendimiento en dispositivos móviles y conexiones de internet más lentas.</span></li>
+<li><span>Identificar posibles mejoras para optimizar el tiempo de carga, como la compresión de imágenes y archivos, el uso de almacenamiento en caché y la minificación del código.</span></li>
+</ul><p><strong><span>2. Evaluación de accesibilidad</span></strong></p><ul>
+<li><span>Verificar el cumplimiento de los estándares de accesibilidad web, como las pautas WCAG (</span><a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" rel="noopener"><span>https://www.w3.org/WAI/WCAG21/quickref/</span></a><span>).</span></li>
+<li><span>Realizar pruebas de usabilidad con usuarios con discapacidades, especialmente usuarios con discapacidad visual que utilicen lectores de pantalla.</span></li>
+<li><span>Recopilar comentarios y retroalimentación de los usuarios con discapacidades para identificar áreas de mejora y asegurar la inclusión de la interfaz.</span></li>
+<li><span>Preguntas para el usuario, como:</span>
+<ul>
+<li><span>¿Consideras que la interfaz es fácilmente accesible para personas con discapacidad visual parcial?</span></li>
+<li><span>¿Los comandos de voz y la retroalimentación auditiva facilitaron tu interacción con la interfaz?</span></li>
+<li><span>¿Encontraste alguna dificultad o barrera de accesibilidad durante el registro de usuario, registro de negocio o búsqueda local de restaurantes?</span></li>
+<li><span>¿Tuviste problemas al utilizar la interfaz desde voz? ¿Consideras que la interfaz desde voz es equivalente a la interfaz estándar en términos de funcionalidad y facilidad de uso?</span></li>
+</ul>
+</li>
+</ul><p><strong><span>3. Evaluación de la usabilidad</span></strong></p><ul>
+<li>
+<p><span>Realizar pruebas de usabilidad con usuarios representativos para evaluar la facilidad de uso de la interfaz.</span></p>
+</li>
+<li>
+<p><span>Recopilar comentarios y opiniones subjetivas utilizando un cuestionario de satisfacción del usuario, como el System Usability Scale (SUS), adaptado para incluir aspectos relacionados a la usabilidad, como los siguientes ítems, puntuados numéricamente (del 1 al 10):</span></p>
+<ul>
+<li><span>Creo que la aplicación es fácil de usar.</span></li>
+<li><span>Creo que puedo completar las tareas de la aplicación de manera eficiente.</span></li>
+<li><span>Creo que la aplicación es fácil de aprender a usar.</span></li>
+<li><span>Me siento confiado/a al usar la aplicación.</span></li>
+<li><span>Necesitaría aprender muchas cosas nuevas antes de poder usar la aplicación.</span></li>
+<li><span>Creo que la aplicación es innecesariamente compleja.</span></li>
+<li><span>Considero que la aplicación es fácil de usar después de haberla usado durante un tiempo.</span></li>
+<li><span>Me siento cómodo/a utilizando la aplicación.</span></li>
+<li><span>La mayoría de las personas aprenderían a usar la aplicación rápidamente.</span></li>
+<li><span>Necesito aprender muchas cosas antes de poder comenzar a usar la aplicación</span></li>
+</ul>
+</li>
+<li>
+<p><span>Preguntas para el usuario:</span></p>
+<ul>
+<li><span>¿Consideras que la interfaz es fácil de usar y navegar?</span></li>
+<li><span>¿Pudiste completar el proceso de registro de usuario de manera fluida y sin problemas?</span></li>
+<li><span>¿La interfaz proporcionó indicaciones claras y fáciles de seguir durante el registro</span></li>
+<li><span>¿Encontraste alguna dificultad o confusión al ingresar tus datos personales y crear tu cuenta?</span></li>
+<li><span>¿Pudiste completar el proceso de registro de negocio de manera efectiva y sin inconvenientes?</span></li>
+<li><span>¿La interfaz proporcionó instrucciones claras y concisas para registrar tu negocio?</span></li>
+<li><span>¿Encontraste alguna dificultad al proporcionar la información requerida sobre tu negocio?</span></li>
+<li><span>¿Pudiste encontrar fácilmente restaurantes locales en la aplicación?</span></li>
+<li><span>¿Los resultados de búsqueda fueron precisos y relevantes según tus preferencias?</span></li>
+<li><span>¿Encontraste los filtros de búsqueda intuitivos y útiles para refinar tus resultados de búsqueda?</span></li>
+<li><span>¿Pudiste realizar pedidos de recojo en el local, pedidos para comer en el local y pedidos de delivery sin problemas?</span></li>
+<li><span>¿La interfaz proporcionó una forma clara y sencilla de dejar reseñas y calificaciones?</span></li>
+<li><span>¿El proceso de pago fue sencillo y seguro?</span></li>
+</ul>
+</li>
+</ul></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#PRÁCTICA-CALIFICADA-3" title="PRÁCTICA CALIFICADA 3">PRÁCTICA CALIFICADA 3</a><ul class="nav">
+<li class=""><a href="#Requerimientos-no-funcionales" title="Requerimientos no funcionales">Requerimientos no funcionales</a><ul class="nav">
+<li class=""><a href="#1-Carga-rápida" title="1. Carga rápida">1. Carga rápida</a></li>
+<li class=""><a href="#2-Seguridad" title="2. Seguridad">2. Seguridad</a></li>
+<li class=""><a href="#3-Accesibilidad" title="3. Accesibilidad">3. Accesibilidad</a></li>
+<li class=""><a href="#4-Escalabilidad" title="4. Escalabilidad">4. Escalabilidad</a></li>
+<li class=""><a href="#5-Usabilidad" title="5. Usabilidad">5. Usabilidad</a></li>
+</ul>
+</li>
+<li class=""><a href="#Requerimientos-Funcionales" title="Requerimientos Funcionales">Requerimientos Funcionales</a><ul class="nav">
+<li class=""><a href="#1-Registro-de-usuario-Público-en-la-aplicación" title="1. Registro de usuario (Público) en la aplicación">1. Registro de usuario (Público) en la aplicación</a></li>
+<li class=""><a href="#2-Búsqueda-local-de-restaurantes" title="2. Búsqueda local de restaurantes">2. Búsqueda local de restaurantes</a></li>
+<li class=""><a href="#3-Filtros-de-búsqueda" title="3. Filtros de búsqueda">3. Filtros de búsqueda</a></li>
+<li class=""><a href="#4-Solicitar-recogida-en-el-establecimiento" title="4. Solicitar recogida en el establecimiento">4. Solicitar recogida en el establecimiento</a></li>
+<li class=""><a href="#5-Reservar-en-un-restaurante-para-consumo-en-el-lugar" title="5. Reservar en un restaurante para consumo en el lugar">5. Reservar en un restaurante para consumo en el lugar</a></li>
+<li class=""><a href="#6-Solicitar-entrega-a-domicilio-a-un-restaurante" title="6. Solicitar entrega a domicilio a un restaurante">6. Solicitar entrega a domicilio a un restaurante</a></li>
+<li class=""><a href="#7-Sistema-de-reseñas" title="7. Sistema de reseñas">7. Sistema de reseñas</a></li>
+<li class=""><a href="#8-Visualizar-pedidos-activos-y-pasados" title="8. Visualizar pedidos activos y pasados">8. Visualizar pedidos activos y pasados</a></li>
+<li class=""><a href="#9-Registro-de-negocio-en-la-aplicacion" title="9. Registro de negocio en la aplicacion">9. Registro de negocio en la aplicacion</a></li>
+<li class=""><a href="#10-Customizar-perfil-restaurante" title="10. Customizar perfil restaurante:">10. Customizar perfil restaurante:</a></li>
+<li class=""><a href="#11-Customizar-Platillos-Menu-Restaurante" title="11. Customizar Platillos (Menu) Restaurante">11. Customizar Platillos (Menu) Restaurante</a></li>
+<li class=""><a href="#12-DashBoard-de-cada-restaurante" title="12. DashBoard de cada restaurante:">12. DashBoard de cada restaurante:</a></li>
+<li class=""><a href="#13-Promociones-especiales" title="13. Promociones especiales:">13. Promociones especiales:</a></li>
+</ul>
+</li>
+<li class=""><a href="#Plan-de-evaluación-inicial-de-la-interfaz" title="Plan de evaluación inicial de la interfaz">Plan de evaluación inicial de la interfaz</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#PRÁCTICA-CALIFICADA-3" title="PRÁCTICA CALIFICADA 3">PRÁCTICA CALIFICADA 3</a><ul class="nav">
+<li class=""><a href="#Requerimientos-no-funcionales" title="Requerimientos no funcionales">Requerimientos no funcionales</a><ul class="nav">
+<li class=""><a href="#1-Carga-rápida" title="1. Carga rápida">1. Carga rápida</a></li>
+<li class=""><a href="#2-Seguridad" title="2. Seguridad">2. Seguridad</a></li>
+<li class=""><a href="#3-Accesibilidad" title="3. Accesibilidad">3. Accesibilidad</a></li>
+<li class=""><a href="#4-Escalabilidad" title="4. Escalabilidad">4. Escalabilidad</a></li>
+<li class=""><a href="#5-Usabilidad" title="5. Usabilidad">5. Usabilidad</a></li>
+</ul>
+</li>
+<li class=""><a href="#Requerimientos-Funcionales" title="Requerimientos Funcionales">Requerimientos Funcionales</a><ul class="nav">
+<li class=""><a href="#1-Registro-de-usuario-Público-en-la-aplicación" title="1. Registro de usuario (Público) en la aplicación">1. Registro de usuario (Público) en la aplicación</a></li>
+<li class=""><a href="#2-Búsqueda-local-de-restaurantes" title="2. Búsqueda local de restaurantes">2. Búsqueda local de restaurantes</a></li>
+<li class=""><a href="#3-Filtros-de-búsqueda" title="3. Filtros de búsqueda">3. Filtros de búsqueda</a></li>
+<li class=""><a href="#4-Solicitar-recogida-en-el-establecimiento" title="4. Solicitar recogida en el establecimiento">4. Solicitar recogida en el establecimiento</a></li>
+<li class=""><a href="#5-Reservar-en-un-restaurante-para-consumo-en-el-lugar" title="5. Reservar en un restaurante para consumo en el lugar">5. Reservar en un restaurante para consumo en el lugar</a></li>
+<li class=""><a href="#6-Solicitar-entrega-a-domicilio-a-un-restaurante" title="6. Solicitar entrega a domicilio a un restaurante">6. Solicitar entrega a domicilio a un restaurante</a></li>
+<li class=""><a href="#7-Sistema-de-reseñas" title="7. Sistema de reseñas">7. Sistema de reseñas</a></li>
+<li class=""><a href="#8-Visualizar-pedidos-activos-y-pasados" title="8. Visualizar pedidos activos y pasados">8. Visualizar pedidos activos y pasados</a></li>
+<li class=""><a href="#9-Registro-de-negocio-en-la-aplicacion" title="9. Registro de negocio en la aplicacion">9. Registro de negocio en la aplicacion</a></li>
+<li class=""><a href="#10-Customizar-perfil-restaurante" title="10. Customizar perfil restaurante:">10. Customizar perfil restaurante:</a></li>
+<li class=""><a href="#11-Customizar-Platillos-Menu-Restaurante" title="11. Customizar Platillos (Menu) Restaurante">11. Customizar Platillos (Menu) Restaurante</a></li>
+<li class=""><a href="#12-DashBoard-de-cada-restaurante" title="12. DashBoard de cada restaurante:">12. DashBoard de cada restaurante:</a></li>
+<li class=""><a href="#13-Promociones-especiales" title="13. Promociones especiales:">13. Promociones especiales:</a></li>
+</ul>
+</li>
+<li class=""><a href="#Plan-de-evaluación-inicial-de-la-interfaz" title="Plan de evaluación inicial de la interfaz">Plan de evaluación inicial de la interfaz</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
